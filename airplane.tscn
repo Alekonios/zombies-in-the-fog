@@ -1,0 +1,441 @@
+[gd_scene load_steps=18 format=3 uid="uid://cmh0e0vi78q5u"]
+
+[ext_resource type="Texture2D" uid="uid://24sb41r13hhn" path="res://3dmodels_glb/airplane.png" id="1_b72va"]
+[ext_resource type="Script" path="res://scripts/airplane.gd" id="1_rum4x"]
+[ext_resource type="ArrayMesh" uid="uid://behipp2ua7j6f" path="res://3dmodels_glb/airplane.obj" id="2_sm1it"]
+[ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="4_0cyai"]
+[ext_resource type="PackedScene" uid="uid://bj2setqts7fgn" path="res://player/left_arm.tscn" id="5_iucyh"]
+[ext_resource type="AudioStream" uid="uid://ccvycnrw48tr6" path="res://music and sounds/1513992487_samolety_039.mp3" id="5_opnqf"]
+[ext_resource type="PackedScene" uid="uid://cd2nar2a4e1rr" path="res://player/right_arm.tscn" id="6_mb1e4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dxcu"]
+albedo_texture = ExtResource("1_b72va")
+metallic = 0.59
+metallic_specular = 0.71
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbnl2"]
+albedo_color = Color(0.411765, 0.411765, 0.411765, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7mbc"]
+material = SubResource("StandardMaterial3D_vbnl2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yr8ly"]
+lifetime_randomness = 0.16
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 6)
+scale_min = 0.3
+scale_max = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acrrm"]
+albedo_color = Color(0.619608, 0.168627, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_36ks7"]
+material = SubResource("StandardMaterial3D_acrrm")
+
+[sub_resource type="Animation" id="Animation_e61t2"]
+resource_name = "canscene"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.8, 7, 9, 9.9, 10.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0725282, 2.67192, 59.7205), Vector3(-0.0725282, 2.67192, 45.3032), Vector3(-0.0725282, 2.67192, 45.3032), Vector3(-0.0725282, 2.67192, 45.3032), Vector3(-0.0725282, 2.67192, 26.8457), Vector3(-0.0725282, 7.61745, 19.904), Vector3(-0.0725282, 7.61745, 16.9189)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.4, 3.2, 4, 5, 5.8, 6.5, 6.9, 7.2, 10.6, 11.6, 12, 12.3, 12.8, 13.2, 13.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.196941, 0.463806, 0.045289), Vector3(0.196941, 0.463806, 0.045289), Vector3(0.151364, -0.497159, -0.0414861), Vector3(0.151364, -0.497159, -0.0414861), Vector3(0.00391189, 2.62314, 0.0895672), Vector3(0.00391189, 2.62314, 0.0895672), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.158631, -3.1235, -0.00977628), Vector3(-0.158631, -3.1235, -0.00977628), Vector3(-0.158631, -2.71754, -0.00977627), Vector3(-0.158631, -2.71754, -0.00977627), Vector3(-0.158631, -2.96194, -0.00977627), Vector3(-0.158631, -3.1235, -0.00977628)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Airplane/Node3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(12, 12.6, 13.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0514697, 0, 0), Vector3(-0.0514697, 0, 0), Vector3(-1.24461, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Airplane:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(16.1, 17, 17.3, 19.1, 22.1, 26.9, 29.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.030804, 0.311379, -7.1024), Vector3(0.030804, 0.311379, -145.028), Vector3(0.030804, 16.2371, -135.28), Vector3(0.030804, 16.2371, -135.28), Vector3(0.030804, 67.3462, -245), Vector3(0.030804, 251.186, -533.852), Vector3(0.030804, 762.34, -1706.13)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("../Airplane/GPUParticles3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("../Airplane/GPUParticles3D2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(14, 14.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("../Airplane/GPUParticles3D3:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(14, 14.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("../Airplane/GPUParticles3D5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(14, 14.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath("../Airplane/GPUParticles3D4:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(14, 14.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Airplane:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(15, 18.6, 18.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.406365, 0, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Label:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(23, 23.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("left_arm:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.3, 0.6, 0.7, 0.9, 1.2, 1.3, 1.5, 1.7, 1.8, 2, 2.3, 2.4, 2.6, 2.9, 3, 3.2, 3.5, 3.6, 3.8, 4.1, 4.2, 4.4, 4.7, 4.8, 5, 7.1, 7.2, 7.4, 7.7, 7.8, 8, 8.3, 8.4, 8.6, 8.9, 9, 9.2, 9.5, 9.6, 9.8, 10.1, 10.2, 10.4, 10.7, 10.8, 11, 11.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.703716, 0.00399036, -0.0106977), Vector3(-0.277474, 0.00316342, -0.00898224), Vector3(-0.703716, 0.00399036, -0.0106977)]
+}
+
+[sub_resource type="Animation" id="Animation_4kkag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0725282, 2.67192, 45.3032)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.196941, 0.463806, 0.045289)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Airplane/Node3D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0514697, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Airplane:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.030804, 0.311379, -60.734)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Airplane/GPUParticles3D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Airplane/GPUParticles3D3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Airplane/GPUParticles3D5:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Airplane/GPUParticles3D4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Airplane:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Label:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("left_arm:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.277474, 0.00316342, -0.00898224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i44f0"]
+_data = {
+"RESET": SubResource("Animation_4kkag"),
+"canscene": SubResource("Animation_e61t2")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ca4ws"]
+size = Vector3(242.5, 3.47242, 1)
+
+[node name="airplane" type="Node3D"]
+script = ExtResource("1_rum4x")
+
+[node name="Airplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.58257, 0, 0, 0, 4.58257, 0, 0, 0, 4.58257, 0.030804, 0.311379, -60.734)
+material_override = SubResource("StandardMaterial3D_1dxcu")
+mesh = ExtResource("2_sm1it")
+
+[node name="Node3D" type="Node3D" parent="Airplane"]
+transform = Transform3D(1.16715, 0, 0, 0, 0.998676, 0.051447, 0, -0.051447, 0.998676, -0.0652926, 1.21473, 5.4597)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Airplane/Node3D"]
+transform = Transform3D(1.83898, 0, 0, 0, 0.0930873, -1.06149, 0, 0.0666366, 1.48283, 0.108512, -0.552723, 0.692083)
+mesh = SubResource("BoxMesh_b7mbc")
+skeleton = NodePath("../../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, -9.53861e-09, 0.218218, 0, -0.218218, -9.53861e-09, -0.0297945, 2.16251, 2.8302)
+spot_range = 5.77718
+spot_angle = 28.2119
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, -9.53861e-09, 0.218218, 0, -0.218218, -9.53861e-09, -0.0297945, 2.16251, 4.09098)
+spot_range = 5.77718
+spot_angle = 28.2119
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, 0.218218, 0, 0, 0, 0.218218, 3.5454, 1.11914, 1.26721)
+amount = 12
+lifetime = 1.7
+preprocess = 13.74
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_yr8ly")
+draw_pass_1 = SubResource("BoxMesh_36ks7")
+
+[node name="GPUParticles3D3" type="GPUParticles3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, 0.218218, 0, 0, 0, 0.218218, 2.11748, 1.18112, -0.138479)
+amount = 12
+lifetime = 1.7
+preprocess = 13.74
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_yr8ly")
+draw_pass_1 = SubResource("BoxMesh_36ks7")
+
+[node name="GPUParticles3D5" type="GPUParticles3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, 0.218218, 0, 0, 0, 0.218218, -2.01044, 1.18112, -0.138479)
+amount = 12
+lifetime = 1.7
+preprocess = 13.74
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_yr8ly")
+draw_pass_1 = SubResource("BoxMesh_36ks7")
+
+[node name="GPUParticles3D4" type="GPUParticles3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, 0.218218, 0, 0, 0, 0.218218, -3.54911, 1.11914, 1.26721)
+amount = 12
+lifetime = 1.7
+preprocess = 13.74
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_yr8ly")
+draw_pass_1 = SubResource("BoxMesh_36ks7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Airplane"]
+transform = Transform3D(0.218218, 0, 0, 0, 0.218218, 0, 0, 0, 0.218218, -0.00672198, -0.0679484, 1.54987)
+stream = ExtResource("5_opnqf")
+unit_size = 5.24
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(0.897402, 0.0469538, 0.438707, 0.0443984, 0.979664, -0.195671, -0.438973, 0.195073, 0.877068, -0.0725282, 2.67192, 45.3032)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D2"]
+libraries = {
+"": SubResource("AnimationLibrary_i44f0")
+}
+
+[node name="left_arm" parent="Camera3D2" instance=ExtResource("5_iucyh")]
+transform = Transform3D(0.999962, 0.00811556, 0.00304241, -0.00863856, 0.961711, 0.273927, -0.000702846, -0.273943, 0.961745, -0.983995, -0.055656, -0.00291443)
+
+[node name="right_arm" parent="Camera3D2" instance=ExtResource("6_mb1e4")]
+transform = Transform3D(0.961676, -0.0251265, 0.273033, -0.180531, 0.691453, 0.6995, -0.206365, -0.721984, 0.660418, 0.899479, -0.467133, 0.108795)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25.9781, 7.0319, 4.72669)
+
+[node name="Camera3D3" type="Camera3D" parent="."]
+transform = Transform3D(0.857718, 0.0796577, 0.507913, 0.0266168, 0.979719, -0.198601, -0.513432, 0.183863, 0.838202, 13.8364, 16.7243, -119.791)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -94.0
+offset_right = 504.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_0cyai")
+theme_override_font_sizes/font_size = 70
+text = "thanks for passing!!!"
+horizontal_alignment = 1
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.35471)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40635, -0.320076)
+shape = SubResource("BoxShape3D_ca4ws")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

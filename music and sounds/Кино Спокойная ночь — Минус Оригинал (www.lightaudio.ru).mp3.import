@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blhinmr6xsiay"
+path="res://.godot/imported/Кино Спокойная ночь — Минус Оригинал (www.lightaudio.ru).mp3-d7a21cebb5594965f794791dc50d1bc0.mp3str"
+
+[deps]
+
+source_file="res://music and sounds/Кино Спокойная ночь — Минус Оригинал (www.lightaudio.ru).mp3"
+dest_files=["res://.godot/imported/Кино Спокойная ночь — Минус Оригинал (www.lightaudio.ru).mp3-d7a21cebb5594965f794791dc50d1bc0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

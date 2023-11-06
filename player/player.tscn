@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://xi45rp0tdxit"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_746bd"]
+[ext_resource type="PackedScene" uid="uid://bj2setqts7fgn" path="res://player/left_arm.tscn" id="2_cfycu"]
+[ext_resource type="PackedScene" uid="uid://cd2nar2a4e1rr" path="res://player/right_arm.tscn" id="3_l4c5y"]
+[ext_resource type="AudioStream" uid="uid://fayvgjteeu3s" path="res://music and sounds/3dbf5d21b2d06c0 (mp3cut.net).mp3" id="4_lmtui"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vybos"]
+height = 2.54656
+
+[node name="player" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_746bd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07127, 0)
+
+[node name="left_arm" parent="." instance=ExtResource("2_cfycu")]
+transform = Transform3D(1, 0, 0, 0, 0.990331, -0.138724, 0, 0.138724, 0.990331, -0.970749, 1.81252, -0.106018)
+
+[node name="right_arm" parent="." instance=ExtResource("3_l4c5y")]
+transform = Transform3D(0.960025, -0.0262352, 0.278681, -0.279562, -0.040052, 0.959292, -0.0140056, -0.998853, -0.0457854, 0.908488, 1.87407, 0.0492968)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22804, 0)
+shape = SubResource("CapsuleShape3D_vybos")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_lmtui")
+volume_db = -21.334
+unit_size = 21.42
+max_db = 1.715
+pitch_scale = 0.85
+bus = &"SOUND_EFFECTS"
+doppler_tracking = 2
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.35
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

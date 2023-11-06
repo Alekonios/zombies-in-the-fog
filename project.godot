@@ -1,0 +1,81 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="zombies in the fog"
+run/main_scene="res://tscenes/mainmenu.tscn"
+config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://zomba2.png"
+
+[autoload]
+
+G="*res://scripts/g.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/initial_position_type=0
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/per_pixel_transparency/allowed=true
+mouse_cursor/custom_image="res://textures/t0nfx3b6 (2).png"
+mouse_cursor/subwindows/embed_subwindows=true
+mouse_cursor/show_image=false
+mouse_cursor/bg_color=Color(0, 0, 0, 1)
+mouse_cursor/energy_saving/keep_screen_on.editor=false
+mouse_cursor/per_pixel_transparency/allowed=true
+mouse_cursor/vsync/vsync_mode=1
+mouse_cursor/size/resizable=false
+mouse_cursor/icon="res://zomba2.png"
+mouse_cursor/name="zombies in the fog"
+mouse_cursor/size/viewport_height=1080
+mouse_cursor/size/viewport_width=1920
+
+[editor]
+
+movie_writer/disable_vsync=true
+
+[input]
+
+a={
+"deadzone": 0.5,
+"events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":65,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+d={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":68,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+esc={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[rendering]
+
+lights_and_shadows/quality/msaa_3d=0
+lights_and_shadows/disable_vsync=true
+lights_and_shadows/custom_image="res://textures/t0nfx3b6 (2).png"
+lights_and_shadows/subwindows/embed_subwindows=true
+lights_and_shadows/show_image=false
+lights_and_shadows/bg_color=Color(0, 0, 0, 1)
+lights_and_shadows/energy_saving/keep_screen_on.editor=false

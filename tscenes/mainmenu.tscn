@@ -1,0 +1,1081 @@
+[gd_scene load_steps=57 format=3 uid="uid://djrgivdnrqwlt"]
+
+[ext_resource type="Texture2D" uid="uid://bljavhckuv6bb" path="res://3_models_tscn/grass4.png" id="1_hw2u8"]
+[ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_x4n6u"]
+[ext_resource type="ArrayMesh" uid="uid://mf44fgm8uh8g" path="res://3_models_tscn/grass4.obj" id="2_f4fd8"]
+[ext_resource type="PackedScene" uid="uid://cyigf6l3sdsuh" path="res://mobs/menu_red_zombie.tscn" id="4_jsunq"]
+[ext_resource type="PackedScene" uid="uid://cmnruqohow5cj" path="res://mobs/menu_green_zombie.tscn" id="5_x2wai"]
+[ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="6_rew7o"]
+[ext_resource type="Texture2D" uid="uid://doasc0pvsuery" path="res://textures/pixil-frame-0 (15).png" id="7_c7dvi"]
+[ext_resource type="PackedScene" uid="uid://cgn8q1atqjsql" path="res://sound_settings.tscn" id="8_lhbk4"]
+[ext_resource type="AudioStream" uid="uid://deo3sy1smyda" path="res://music and sounds/button.mp3" id="9_wrrh4"]
+[ext_resource type="Texture2D" uid="uid://dfx7sxmpopygb" path="res://3dmodels_glb/magnitola.png" id="10_vy6wo"]
+[ext_resource type="ArrayMesh" uid="uid://2llg7u2h50aq" path="res://3dmodels_glb/magnitola.obj" id="11_00oa4"]
+[ext_resource type="AudioStream" uid="uid://blhinmr6xsiay" path="res://music and sounds/Кино Спокойная ночь — Минус Оригинал (www.lightaudio.ru).mp3" id="12_u0l6v"]
+[ext_resource type="AudioStream" uid="uid://bkj6tjhkjr8hi" path="res://music and sounds/kassetnyj-magnitofon (mp3cut.net).mp3" id="13_j0atc"]
+[ext_resource type="AudioStream" uid="uid://he4qjr2jvh63" path="res://music and sounds/Viktor_Cojj_-_Zvezda_Po_Imeni_Solnce_Minus_65127876 (1).mp3" id="14_l6e8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f48u1"]
+albedo_color = Color(0, 0.0823529, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_si0wx"]
+material = SubResource("StandardMaterial3D_f48u1")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3d1km"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_quowe"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usn1g"]
+albedo_texture = ExtResource("1_hw2u8")
+
+[sub_resource type="Environment" id="Environment_l5f27"]
+fog_light_energy = 0.16
+fog_sun_scatter = 0.11
+fog_density = 0.1059
+fog_height = 1.21
+fog_height_density = 16.0
+volumetric_fog_enabled = true
+
+[sub_resource type="Theme" id="Theme_vfua8"]
+default_font = ExtResource("6_rew7o")
+
+[sub_resource type="Theme" id="Theme_j27h5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g55x8"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xqjl7"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+expand_margin_left = 15.0
+expand_margin_right = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dl1nr"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fmh4c"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4olie"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="Theme" id="Theme_yqc8j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6eft1"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8sa05"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+expand_margin_left = 17.0
+expand_margin_right = 17.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vt1v5"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8h0m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iyxnh"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="Theme" id="Theme_uelvf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7x26s"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ylrj"]
+texture = ExtResource("7_c7dvi")
+texture_margin_left = 27.0
+texture_margin_top = 27.0
+texture_margin_right = 27.0
+texture_margin_bottom = 27.0
+expand_margin_left = 13.0
+expand_margin_right = 13.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bc0re"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mq23n"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsk51"]
+texture = ExtResource("7_c7dvi")
+
+[sub_resource type="Animation" id="Animation_xs7t5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tavpx"]
+resource_name = "blackest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6s6nd"]
+_data = {
+"RESET": SubResource("Animation_xs7t5"),
+"blackest": SubResource("Animation_tavpx")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gx1sc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6xkyf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16xj3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5jl6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfw2f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o45g7"]
+albedo_texture = ExtResource("10_vy6wo")
+
+[sub_resource type="Animation" id="Animation_ucyay"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.425577, 0.425577, 0.425577)]
+}
+
+[sub_resource type="Animation" id="Animation_sl1ou"]
+resource_name = "bus"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.425577, 0.425577, 0.425577), Vector3(0.457529, 0.457529, 0.457529), Vector3(0.425577, 0.425577, 0.425577)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wr6od"]
+_data = {
+"RESET": SubResource("Animation_ucyay"),
+"bus": SubResource("Animation_sl1ou")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vkxv3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5ouo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oygbw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4akn2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ysl6"]
+
+[node name="maim_menu" type="Node3D"]
+script = ExtResource("1_x4n6u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(47.4719, 0, 0, 0, 1, 0, 0, 0, 58.0622, 0, 0, 0)
+mesh = SubResource("BoxMesh_si0wx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_3d1km")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(47.4719, 0, 0, 0, 1, 0, 0, 0, 58.0622, 47.4449, 0, 0)
+mesh = SubResource("BoxMesh_si0wx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_quowe")
+
+[node name="grass" type="Node3D" parent="."]
+
+[node name="Grass4" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7403, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass5" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.904, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass6" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26289, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass7" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49515, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass8" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1723, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass9" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0023, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass10" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7403, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass11" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.904, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass12" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26289, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass13" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49515, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass14" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1723, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass15" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0023, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass16" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass17" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass18" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass19" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass20" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass21" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass22" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass23" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass24" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass25" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass26" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass27" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass28" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass29" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass30" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass31" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass32" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass33" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass34" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass35" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass36" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass37" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass38" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass39" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass40" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass41" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass42" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass43" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass44" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass45" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass46" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass47" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass48" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass49" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass50" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass51" type="MeshInstance3D" parent="grass"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="grass2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.746, 0, 0)
+
+[node name="Grass4" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7403, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass5" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.904, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass6" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26289, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass7" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49515, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass8" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1723, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass9" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0023, 0.478955, 24.6908)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass10" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7403, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass11" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.904, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass12" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26289, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass13" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49515, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass14" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1723, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass15" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0023, 0.478955, 16.8544)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass16" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass17" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass18" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass19" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass20" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass21" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, 9.5359)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass22" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass23" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass24" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass25" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass26" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass27" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, 1.69944)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass28" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass29" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass30" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass31" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass32" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass33" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -6.15866)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass34" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass35" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass36" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass37" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass38" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass39" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -13.9951)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass40" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass41" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass42" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass43" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass44" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass45" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -21.0313)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass46" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.7403, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass47" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.904, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass48" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.26289, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass49" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.49515, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass50" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.1723, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Grass51" type="MeshInstance3D" parent="grass2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -19.0023, 0.478955, -28.8677)
+material_override = SubResource("StandardMaterial3D_usn1g")
+mesh = ExtResource("2_f4fd8")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.878809, 0, 0.477174, 0, 1, 0, -0.477174, 0, 0.878809, 43.5311, 1.41353, 19.6324)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.852648, 0.0961841, 0.513556, 0.162376, 0.983019, 0.0854807, -0.496614, 0.156274, -0.853788, 55.4605, 17.4327, -18.1958)
+light_energy = 0.192
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 2.747
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 5.03
+shadow_opacity = 0.73
+shadow_blur = 6.758
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l5f27")
+
+[node name="red_zombie" parent="." instance=ExtResource("4_jsunq")]
+transform = Transform3D(-0.983198, 0, 0.182544, 0, 1, 0, -0.182544, 0, -0.983198, 46.3033, 0.5, 9.44944)
+
+[node name="red_zombie4" parent="." instance=ExtResource("4_jsunq")]
+transform = Transform3D(-0.983198, 0, 0.182544, 0, 1, 0, -0.182544, 0, -0.983198, 4.73005, 0.5, -2.58073)
+
+[node name="red_zombie2" parent="." instance=ExtResource("4_jsunq")]
+transform = Transform3D(-0.983198, 0, 0.182544, 0, 1, 0, -0.182544, 0, -0.983198, 20.1514, 0.5, -2.85733)
+
+[node name="red_zombie3" parent="." instance=ExtResource("4_jsunq")]
+transform = Transform3D(-0.983198, 0, 0.182544, 0, 1, 0, -0.182544, 0, -0.983198, 26.065, 0.5, -10.1479)
+
+[node name="green_zombie" parent="." instance=ExtResource("5_x2wai")]
+transform = Transform3D(-0.982509, 0, 0.186215, 0, 1, 0, -0.186215, 0, -0.982509, 36.5583, 0.5, 3.64023)
+
+[node name="green_zombie2" parent="." instance=ExtResource("5_x2wai")]
+transform = Transform3D(-0.982509, 0, 0.186215, 0, 1, 0, -0.186215, 0, -0.982509, 17.535, 0.5, 8.03089)
+
+[node name="green_zombie3" parent="." instance=ExtResource("5_x2wai")]
+transform = Transform3D(-0.982509, 0, 0.186215, 0, 1, 0, -0.186215, 0, -0.982509, 43.8036, 0.5, -11.2971)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-51, 0)
+scale = Vector2(0.908945, 0.92)
+
+[node name="Pixil-frame-0(15)" type="Sprite2D" parent="Node2D"]
+position = Vector2(559.808, 84.8198)
+scale = Vector2(1.90159, 0.61578)
+texture = ExtResource("7_c7dvi")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 129.808
+offset_top = 26.8198
+offset_right = 1029.81
+offset_bottom = 151.82
+theme = SubResource("Theme_vfua8")
+theme_override_font_sizes/font_size = 67
+text = "ZOMBIES IN THE FOG"
+
+[node name="play" type="Button" parent="Node2D/Label"]
+layout_mode = 0
+offset_left = -39.0
+offset_top = 205.0
+offset_right = 213.0
+offset_bottom = 369.0
+scale = Vector2(1, 0.879999)
+theme = SubResource("Theme_j27h5")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_g55x8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xqjl7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dl1nr")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fmh4c")
+theme_override_styles/focus = SubResource("StyleBoxTexture_4olie")
+text = "PLaY"
+
+[node name="options" type="Button" parent="Node2D/Label"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = 398.0
+offset_right = 239.0
+offset_bottom = 524.0
+scale = Vector2(0.919999, 1)
+theme = SubResource("Theme_yqc8j")
+theme_override_fonts/font = ExtResource("6_rew7o")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_6eft1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8sa05")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vt1v5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_j8h0m")
+theme_override_styles/focus = SubResource("StyleBoxTexture_iyxnh")
+text = "OPTIONS"
+
+[node name="quit game" type="Button" parent="Node2D/Label"]
+layout_mode = 0
+offset_left = -46.0
+offset_top = 572.0
+offset_right = 294.0
+offset_bottom = 698.0
+scale = Vector2(0.799999, 1)
+theme = SubResource("Theme_uelvf")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_7x26s")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7ylrj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bc0re")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mq23n")
+theme_override_styles/focus = SubResource("StyleBoxTexture_vsk51")
+text = "QUIT GaME"
+
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 72.6117
+offset_top = 1242.39
+offset_right = 521.612
+offset_bottom = 1307.39
+theme_override_fonts/font = ExtResource("6_rew7o")
+theme_override_font_sizes/font_size = 25
+text = "Sequential Studio"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -475.0
+offset_top = -224.0
+offset_right = -475.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.91704, 1.98292)
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6s6nd")
+}
+
+[node name="options" parent="." instance=ExtResource("8_lhbk4")]
+visible = false
+offset_left = 405.0
+offset_top = 215.0
+offset_right = 405.0
+offset_bottom = 215.0
+
+[node name="Button" type="Button" parent="."]
+visible = false
+offset_left = 490.0
+offset_top = 737.0
+offset_right = 570.0
+offset_bottom = 779.0
+theme_override_fonts/font = ExtResource("6_rew7o")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_gx1sc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6xkyf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_16xj3")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_u5jl6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cfw2f")
+text = "<EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wrrh4")
+volume_db = -19.676
+bus = &"SOUND_EFFECTS"
+
+[node name="Magnitola" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.415843, 0, -0.0905012, 0, 0.425577, 0, 0.0905012, 0, -0.415843, 42.5021, 0.5, 15.0984)
+material_override = SubResource("StandardMaterial3D_o45g7")
+mesh = ExtResource("11_00oa4")
+
+[node name="Label3D2" type="Label3D" parent="Magnitola"]
+transform = Transform3D(1.0974, 0, -0.0195958, 0, 1.09757, 0, 0.0195958, 0, 1.0974, 0.511276, 1.81257, -1.42596)
+pixel_size = 0.004
+alpha_cut = 1
+alpha_scissor_threshold = 1.0
+alpha_hash_scale = 2.0
+modulate = Color(0.545098, 0.545098, 0.545098, 1)
+text = ">"
+font = ExtResource("6_rew7o")
+font_size = 41
+outline_size = 8
+
+[node name="Label3D3" type="Label3D" parent="Magnitola"]
+transform = Transform3D(0.998023, 0.0224991, -0.0205245, -0.0187075, 1.07749, 0.0966731, 0.0222232, -0.103381, 1.00311, -0.31366, 1.81448, -1.41688)
+pixel_size = 0.004
+alpha_cut = 1
+alpha_scissor_threshold = 1.0
+alpha_hash_scale = 2.0
+modulate = Color(0.545098, 0.545098, 0.545098, 1)
+text = "<"
+font = ExtResource("6_rew7o")
+font_size = 43
+outline_size = 0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Magnitola"]
+transform = Transform3D(2.34975, 0, 0, 0, 2.34975, 0, 0, 0, 2.34975, 0.0897598, 1.1617, -0.918335)
+stream = ExtResource("12_u0l6v")
+unit_size = 1.44
+max_db = 1.571
+pitch_scale = 0.81
+autoplay = true
+bus = &"MUSIC"
+
+[node name="perekluch" type="AudioStreamPlayer3D" parent="Magnitola"]
+transform = Transform3D(2.34975, 0, 0, 0, 2.34975, 0, 0, 0, 2.34975, 0.0897446, 1.1617, -0.918335)
+stream = ExtResource("13_j0atc")
+volume_db = -21.333
+pitch_scale = 0.81
+bus = &"SOUND_EFFECTS"
+
+[node name="solnce" type="AudioStreamPlayer3D" parent="Magnitola"]
+transform = Transform3D(2.34975, 0, 0, 0, 2.34975, 0, 0, 0, 2.34975, 0.0897598, 1.1617, -0.918335)
+stream = ExtResource("14_l6e8e")
+unit_size = 4.29
+pitch_scale = 0.81
+bus = &"MUSIC"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Magnitola"]
+libraries = {
+"": SubResource("AnimationLibrary_wr6od")
+}
+
+[node name="left" type="Button" parent="Magnitola"]
+offset_left = 1117.0
+offset_top = 612.0
+offset_right = 1135.0
+offset_bottom = 643.0
+scale = Vector2(1.88496, 1.16295)
+theme_override_styles/normal = SubResource("StyleBoxTexture_vkxv3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g5ouo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oygbw")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4akn2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8ysl6")
+
+[node name="right" type="Button" parent="Magnitola"]
+offset_left = 1188.0
+offset_top = 612.0
+offset_right = 1206.0
+offset_bottom = 643.0
+scale = Vector2(1.91747, 1.14528)
+theme_override_styles/normal = SubResource("StyleBoxTexture_vkxv3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_g5ouo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oygbw")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_4akn2")
+theme_override_styles/focus = SubResource("StyleBoxTexture_8ysl6")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+
+[connection signal="mouse_entered" from="Node2D/Label/play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="Node2D/Label/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Node2D/Label/options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="Node2D/Label/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="Node2D/Label/quit game" to="." method="_on_quit_game_mouse_entered"]
+[connection signal="pressed" from="Node2D/Label/quit game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Magnitola/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Magnitola/right" to="." method="_on_right_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

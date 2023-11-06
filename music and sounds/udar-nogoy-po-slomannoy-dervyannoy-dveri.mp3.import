@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c58oqctgn21pr"
+path="res://.godot/imported/udar-nogoy-po-slomannoy-dervyannoy-dveri.mp3-5e591688a2b8df707b27db2dd0bc9931.mp3str"
+
+[deps]
+
+source_file="res://music and sounds/udar-nogoy-po-slomannoy-dervyannoy-dveri.mp3"
+dest_files=["res://.godot/imported/udar-nogoy-po-slomannoy-dervyannoy-dveri.mp3-5e591688a2b8df707b27db2dd0bc9931.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

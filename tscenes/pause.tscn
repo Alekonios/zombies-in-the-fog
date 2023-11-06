@@ -1,0 +1,142 @@
+[gd_scene load_steps=14 format=3 uid="uid://bt5l0g4ow6iki"]
+
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_53byr"]
+[ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="2_tcq5t"]
+[ext_resource type="PackedScene" uid="uid://cgn8q1atqjsql" path="res://sound_settings.tscn" id="3_tnxsw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wseuq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5nci6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g03s0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0hhl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_04qfa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5eo5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hbh6m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c6fc5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crap8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3u25"]
+
+[node name="pause" type="CanvasLayer"]
+process_mode = 3
+visible = false
+script = ExtResource("1_53byr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.305882)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -194.0
+offset_top = -126.0
+offset_right = 201.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -141.0
+offset_right = 108.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tcq5t")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_wseuq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5nci6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g03s0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n0hhl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_04qfa")
+text = "RESUME"
+flat = true
+icon_alignment = 1
+
+[node name="options" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -33.0
+offset_right = 113.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tcq5t")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxTexture_wseuq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5nci6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g03s0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n0hhl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_04qfa")
+text = "oPtions"
+flat = true
+icon_alignment = 1
+
+[node name="quit main menu" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = 85.0
+offset_right = 280.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.68, 0.8)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_tcq5t")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_wseuq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5nci6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_g03s0")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n0hhl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_04qfa")
+text = "quit maim menu"
+flat = true
+icon_alignment = 1
+
+[node name="options2" parent="." instance=ExtResource("3_tnxsw")]
+process_mode = 3
+offset_left = 383.0
+offset_top = 255.0
+offset_right = 383.0
+offset_bottom = 255.0
+
+[node name="Button" type="Button" parent="options2"]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 527.0
+offset_right = 156.0
+offset_bottom = 558.0
+theme_override_fonts/font = ExtResource("2_tcq5t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_y5eo5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hbh6m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c6fc5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_crap8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_r3u25")
+text = "<EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="quit main menu" to="." method="_on_quit_main_menu_pressed"]
+[connection signal="pressed" from="options2/Button" to="options2" method="_on_button_pressed"]

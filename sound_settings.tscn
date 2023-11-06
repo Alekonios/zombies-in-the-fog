@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgn8q1atqjsql"]
+
+[ext_resource type="Script" path="res://scripts/sound_settings.gd" id="1_mankw"]
+[ext_resource type="Texture2D" uid="uid://doasc0pvsuery" path="res://textures/pixil-frame-0 (15).png" id="1_xbxp0"]
+[ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="2_yk2e6"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="4_bhofy"]
+[ext_resource type="Script" path="res://scripts/music2.gd" id="5_njmtp"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_43agw"]
+_surfaces = [{
+"2d": true,
+"aabb": AABB(-256, -128, 0, 512, 256, 0),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0),
+"format": 33558545,
+"index_count": 6,
+"index_data": PackedByteArray(3, 0, 0, 0, 1, 0, 1, 0, 2, 0, 3, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 67, 0, 0, 0, 67, 0, 0, 128, 195, 0, 0, 0, 67, 0, 0, 128, 195, 0, 0, 0, 195, 0, 0, 128, 67, 0, 0, 0, 195)
+}]
+
+[sub_resource type="Theme" id="Theme_rscxh"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ok544"]
+grow_begin = -2.0
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_o7b17"]
+color = Color(0.462745, 0, 0, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_slk34"]
+color = Color(0.462745, 0, 0, 1)
+thickness = 5
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 161.0
+offset_top = 127.0
+offset_right = 161.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_mankw")
+
+[node name="Pixil-frame-0(15)" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0.94902, 1, 1)
+position = Vector2(568, 323)
+scale = Vector2(2.12212, 2.41628)
+mesh = SubResource("ArrayMesh_43agw")
+texture = ExtResource("1_xbxp0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 125.0
+offset_right = 332.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_yk2e6")
+theme_override_font_sizes/font_size = 37
+text = "SOUNDS"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 227.0
+offset_right = 379.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("2_yk2e6")
+theme_override_font_sizes/font_size = 27
+text = "SOUND EFFECTS"
+
+[node name="music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 294.0
+offset_right = 329.0
+offset_bottom = 310.0
+scale = Vector2(0.996891, 1.01381)
+theme = SubResource("Theme_rscxh")
+theme_override_styles/slider = SubResource("StyleBoxLine_ok544")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_o7b17")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_slk34")
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_bhofy")
+bas_name = "SOUND_EFFECTS"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 358.0
+offset_right = 379.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("2_yk2e6")
+theme_override_font_sizes/font_size = 27
+text = "music"
+horizontal_alignment = 1
+
+[node name="music2" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 425.0
+offset_right = 329.0
+offset_bottom = 441.0
+scale = Vector2(0.996891, 1.01381)
+theme = SubResource("Theme_rscxh")
+theme_override_styles/slider = SubResource("StyleBoxLine_ok544")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_o7b17")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_slk34")
+max_value = 1.0
+step = 0.001
+script = ExtResource("5_njmtp")
+bas_name = "MUSIC"
+
+[connection signal="value_changed" from="music" to="music" method="_on_value_changed"]
+[connection signal="value_changed" from="music2" to="music2" method="_on_value_changed"]

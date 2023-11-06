@@ -1,0 +1,198 @@
+[gd_scene load_steps=14 format=3 uid="uid://dsnmtaygsx344"]
+
+[ext_resource type="Texture2D" uid="uid://ckm8ypamfhqip" path="res://3dmodels_glb/zabor_lastv.png" id="1_cjmos"]
+[ext_resource type="Script" path="res://scripts/zabor.gd" id="1_hq3ok"]
+[ext_resource type="ArrayMesh" uid="uid://bikkgvr55mdcj" path="res://3dmodels_glb/zabor_lastv.obj" id="2_hxw10"]
+[ext_resource type="PackedScene" uid="uid://bj2setqts7fgn" path="res://player/left_arm.tscn" id="4_eq5yc"]
+[ext_resource type="PackedScene" uid="uid://cd2nar2a4e1rr" path="res://player/right_arm.tscn" id="5_7g8kh"]
+[ext_resource type="AudioStream" uid="uid://c58oqctgn21pr" path="res://music and sounds/udar-nogoy-po-slomannoy-dervyannoy-dveri.mp3" id="6_7l6q4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi0bp"]
+albedo_texture = ExtResource("1_cjmos")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wupv"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5503p"]
+size = Vector3(3.09863, 0.291881, 0.182257)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uo7g6"]
+size = Vector3(3.57802, 1.79656, 0.160833)
+
+[sub_resource type="Animation" id="Animation_0b802"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.603029, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.245095, 1.93386, -0.580982)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D2/right_arm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.476489, -0.501497, -0.087225)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D2/right_arm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.764501, 0.205421, -0.158926)]
+}
+
+[sub_resource type="Animation" id="Animation_bghc3"]
+resource_name = "zabor"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.245095, 2.06625, 0.789855), Vector3(0.245095, 1.93386, -0.580982), Vector3(0.245095, 0.759936, -1.2302), Vector3(0.245095, 0.167542, -1.2302)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.603029, 0, 0), Vector3(-0.00893808, -1.38113, 1.55782), Vector3(0.481135, -1.35649, 1.65992)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D2/right_arm:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.476489, -0.501497, -0.087225), Vector3(0.476489, -0.501497, -0.087225)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D2/right_arm:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.764501, 0.205421, -0.158926), Vector3(-0.764501, 0.205421, -0.158926), Vector3(-0.637634, 1.36473, -0.345104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5so6d"]
+_data = {
+"RESET": SubResource("Animation_0b802"),
+"zabor": SubResource("Animation_bghc3")
+}
+
+[node name="zabor" type="Node3D" groups=["zabor"]]
+script = ExtResource("1_hq3ok")
+
+[node name="ZaborLastv" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840793, 0, -0.245703)
+material_override = SubResource("StandardMaterial3D_xi0bp")
+mesh = ExtResource("2_hxw10")
+
+[node name="ZaborLastv2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.02043, 0, 0, 0, 1.02043, 0, 0, 0, 1.02043, 0.840793, 0, -0.245703)
+material_override = SubResource("StandardMaterial3D_6wupv")
+mesh = ExtResource("2_hxw10")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ZaborLastv2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZaborLastv2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.833618, 0.323247, 0.203527)
+shape = SubResource("BoxShape3D_5503p")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ZaborLastv2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.833618, 1.12773, 0.203527)
+shape = SubResource("BoxShape3D_5503p")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ZaborLastv2/StaticBody3D"]
+transform = Transform3D(0.0960435, 0, 0, 0, 5.27885, 0, 0, 0, 1.61471, -0.845745, 0.805833, 0.250765)
+shape = SubResource("BoxShape3D_5503p")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ZaborLastv2/StaticBody3D"]
+transform = Transform3D(0.0960435, 0, 0, 0, 5.27885, 0, 0, 0, 1.61471, 0.850945, 0.805833, 0.250765)
+shape = SubResource("BoxShape3D_5503p")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="ZaborLastv2/StaticBody3D"]
+transform = Transform3D(0.0960435, 0, 0, 0, 6.03769, 0, 0, 0, 1.61471, -2.33795, 0.875047, 0.250765)
+shape = SubResource("BoxShape3D_5503p")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0959015, 0.917913, 0.219203)
+shape = SubResource("BoxShape3D_uo7g6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0959015, 0.917913, -0.212681)
+shape = SubResource("BoxShape3D_uo7g6")
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.823622, 0.56714, 0, -0.56714, 0.823622, 0.245095, 1.93386, -0.580982)
+
+[node name="left_arm" parent="Camera3D2" instance=ExtResource("4_eq5yc")]
+transform = Transform3D(0.998945, 0.0154417, -0.0432462, -0.00837201, 0.987224, 0.159119, 0.0451507, -0.158589, 0.986312, -0.66045, -0.163015, -0.0182223)
+visible = false
+
+[node name="right_arm" parent="Camera3D2" instance=ExtResource("5_7g8kh")]
+transform = Transform3D(0.988982, 0.01552, 0.147218, -0.114219, 0.712633, 0.692177, -0.0941694, -0.701366, 0.706554, 0.476489, -0.501497, -0.087225)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5so6d")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602074, 0.335494)
+stream = ExtResource("6_7l6q4")
+volume_db = -23.681
+bus = &"SOUND_EFFECTS"
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
