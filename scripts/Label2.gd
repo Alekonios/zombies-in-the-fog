@@ -9,5 +9,6 @@ func _process(_delta):
 
 
 func _on_timer_2_timeout():
-	if G.DIED == false:
-		G.P_SCORE += 1
+	if G.canscene == false:
+		if G.DIED == false:
+			G.P_SCORE += 1

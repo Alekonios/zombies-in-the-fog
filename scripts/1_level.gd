@@ -117,3 +117,7 @@ func _on_area_3d_body_entered(_body):
 func _on_area_3d_2_body_entered(_body):
 	if _body.is_in_group("player"):
 		G.spawn_zombie = true
+
+
+func _on_timer_2_timeout():
+	$player/AudioStreamPlayer3D2.play()

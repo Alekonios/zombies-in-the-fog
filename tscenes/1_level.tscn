@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://d13m7cviljth"]
+[gd_scene load_steps=21 format=3 uid="uid://d13m7cviljth"]
 
 [ext_resource type="Script" path="res://scripts/1_level.gd" id="1_ty726"]
 [ext_resource type="PackedScene" uid="uid://xi45rp0tdxit" path="res://player/player.tscn" id="2_ly0os"]
 [ext_resource type="Script" path="res://scripts/Area3D.gd" id="3_ls6xq"]
 [ext_resource type="Script" path="res://scripts/graas.gd" id="4_1r3kv"]
+[ext_resource type="AudioStream" uid="uid://bg2pybvhvplpt" path="res://music and sounds/vorona-karkaet (mp3cut.net).mp3" id="5_31r68"]
 [ext_resource type="PackedScene" uid="uid://c43ts6mjnf6sx" path="res://3_models_tscn/grass.tscn" id="5_gs6q8"]
 [ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="6_pk383"]
 [ext_resource type="Script" path="res://scripts/Label2.gd" id="7_3te6w"]
@@ -64,8 +65,9 @@ _data = {
 "whiting": SubResource("Animation_8pi3m")
 }
 
-[sub_resource type="Environment" id="Environment_l72tv"]
+[sub_resource type="Environment" id="Environment_78db8"]
 volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0.219608, 0.219608, 0.219608, 1)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ty726")
@@ -102,7 +104,7 @@ shadow_opacity = 0.64
 shadow_blur = 2.919
 
 [node name="player" parent="." instance=ExtResource("2_ly0os")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31607, 0.601526, -9017.41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.316, 0.602, 27.904)
 
 [node name="Node3D" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0286086, -74.1321)
@@ -290,6 +292,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4581, 0, -101.87)
 
 [node name="air_plane_node" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -535.515)
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0213, 42.4484, -63.5635)
+stream = ExtResource("5_31r68")
+
+[node name="Timer2" type="Timer" parent="player"]
+process_callback = 0
+wait_time = 25.0
+autostart = true
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -1698,13 +1709,14 @@ wait_time = 10.0
 autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_l72tv")
+environment = SubResource("Environment_78db8")
 
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]
 [connection signal="body_entered" from="player/Area3D" to="player/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="player/graas" to="player/graas" method="_on_body_entered"]
 [connection signal="body_entered" from="player/Area3D2" to="player/Area3D2" method="_on_body_entered"]
+[connection signal="timeout" from="player/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Label2" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
