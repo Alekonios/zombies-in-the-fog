@@ -1,18 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://xi45rp0tdxit"]
+[gd_scene load_steps=14 format=3 uid="uid://xi45rp0tdxit"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_746bd"]
 [ext_resource type="PackedScene" uid="uid://bj2setqts7fgn" path="res://player/left_arm.tscn" id="2_cfycu"]
 [ext_resource type="PackedScene" uid="uid://cd2nar2a4e1rr" path="res://player/right_arm.tscn" id="3_l4c5y"]
 [ext_resource type="AudioStream" uid="uid://fayvgjteeu3s" path="res://music and sounds/3dbf5d21b2d06c0 (mp3cut.net).mp3" id="4_lmtui"]
+[ext_resource type="PackedScene" uid="uid://c0hwx071rvetr" path="res://player/arm_for_pistol.tscn" id="6_qhi54"]
+[ext_resource type="AudioStream" uid="uid://cp8eghwrb3cwm" path="res://music and sounds/shoot.mp3" id="6_spc17"]
+[ext_resource type="Texture2D" uid="uid://c1lclcso7tj1t" path="res://textures/pricel-transformed.png" id="7_be7bp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vybos"]
 height = 2.54656
+
+[sub_resource type="Animation" id="Animation_xqa6g"]
+resource_name = "run_with_gun"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osjse"]
+_data = {
+"run_with_gun": SubResource("Animation_xqa6g")
+}
+
+[sub_resource type="Animation" id="Animation_jjyma"]
+resource_name = "pricel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.94902, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5viiw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l060x"]
+_data = {
+"RESET": SubResource("Animation_5viiw"),
+"pricel": SubResource("Animation_jjyma")
+}
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_746bd")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07127, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(11.2896, 0, 0, 0, -0.00140236, -10.3811, 0, 1.0044, -0.0144943, 0, 0, -1.03665)
+target_position = Vector3(0, -60, 0)
+debug_shape_thickness = 5
 
 [node name="left_arm" parent="." instance=ExtResource("2_cfycu")]
 transform = Transform3D(1, 0, 0, 0, 0.990331, -0.138724, 0, 0.138724, 0.990331, -0.970749, 1.81252, -0.106018)
@@ -36,5 +88,65 @@ doppler_tracking = 2
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.35
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_osjse")
+}
+
+[node name="right_arm2" parent="." instance=ExtResource("6_qhi54")]
+transform = Transform3D(0.985027, -0.102469, 0.138639, -0.0155085, 0.748257, 0.663228, -0.171698, -0.655448, 0.735464, 0.98033, 1.75915, 0.111335)
+
+[node name="BOOOM" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59707, 2.15732, -1.75228)
+stream = ExtResource("6_spc17")
+volume_db = -16.0
+pitch_scale = 0.85
+bus = &"SOUND_EFFECTS"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -334.5
+offset_right = 454.0
+offset_bottom = 334.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.04, -0.0400098)
+pivot_offset = Vector2(459, 334.5)
+texture = ExtResource("7_be7bp")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -454.0
+offset_top = -334.5
+offset_right = 454.0
+offset_bottom = 334.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.785397
+scale = Vector2(0.04, -0.0400098)
+pivot_offset = Vector2(459, 334.5)
+texture = ExtResource("7_be7bp")
+expand_mode = 2
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect2"]
+libraries = {
+"": SubResource("AnimationLibrary_l060x")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

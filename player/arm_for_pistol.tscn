@@ -1,0 +1,233 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0hwx071rvetr"]
+
+[ext_resource type="PackedScene" uid="uid://c2r8cq4pqshjm" path="res://3dmodels_glb/right_arm.glb" id="1_w4ox6"]
+[ext_resource type="PackedScene" uid="uid://dyljmxop86e16" path="res://tscenes/gun_pistolet.tscn" id="2_lobi0"]
+
+[sub_resource type="Animation" id="Animation_mn7e5"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.385356, -0.092025, 0.0386573, 0.917354)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 7.03811e-08, 0.0177318, -0.0180895, 0.999679)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -5.94134e-08, 0.0510239, -0.052053, 0.99734)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun_pistolet/GPUParticles3D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gun_pistolet/GPUParticles3D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("gun_pistolet:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.824487, -3.08018, -0.0382502)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("gun_pistolet:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.355585, -1.10368)]
+}
+
+[sub_resource type="Animation" id="Animation_677fd"]
+resource_name = "pistol"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.385356, -0.092025, 0.0386573, 0.917354)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 7.03811e-08, 0.0177318, -0.0180895, 0.999679)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, -5.94134e-08, 0.0510239, -0.052053, 0.99734)
+
+[sub_resource type="Animation" id="Animation_3w7p5"]
+resource_name = "shoot_animation"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("gun_pistolet/GPUParticles3D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("gun_pistolet/GPUParticles3D2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.385356, -0.092025, 0.0386573, 0.917354, 0.1, 1, 0.464341, -0.0950613, 0.0304358, 0.880014, 0.2, 1, 0.385356, -0.092025, 0.0386573, 0.917354)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("gun_pistolet:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.824487, -3.08018, -0.0382502), Vector3(-0.95642, -3.06924, -0.0522888), Vector3(-0.824487, -3.08018, -0.0382502)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("gun_pistolet:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.355585, -1.10368), Vector3(0, 0.37777, -1.04729), Vector3(0, 0.355585, -1.10368)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5scai"]
+_data = {
+"RESET": SubResource("Animation_mn7e5"),
+"pistol": SubResource("Animation_677fd"),
+"shoot_animation": SubResource("Animation_3w7p5")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ejaql"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+spread = 121.44
+flatness = 0.27
+gravity = Vector3(0, 2, -2)
+initial_velocity_max = 1.5
+linear_accel_max = 1.0
+radial_accel_max = 1.0
+scale_min = 0.1
+scale_max = 0.1
+anim_speed_max = 3.07
+anim_offset_max = 0.6027
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2d4i"]
+albedo_color = Color(0.992157, 0, 0, 1)
+rim_enabled = true
+rim = 0.69
+rim_tint = 0.42
+
+[sub_resource type="BoxMesh" id="BoxMesh_rvfft"]
+material = SubResource("StandardMaterial3D_o2d4i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hed0f"]
+albedo_color = Color(1, 1, 0, 1)
+rim_enabled = true
+
+[node name="right_arm" instance=ExtResource("1_w4ox6")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.385356, -0.092025, 0.0386573, 0.917354)
+bones/2/rotation = Quaternion(7.03811e-08, 0.0177318, -0.0180895, 0.999679)
+bones/3/rotation = Quaternion(-5.94134e-08, 0.0510239, -0.052053, 0.99734)
+
+[node name="model" parent="Armature/Skeleton3D" index="0"]
+lod_bias = 128.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_5scai")
+}
+
+[node name="gun_pistolet" parent="." index="2" instance=ExtResource("2_lobi0")]
+transform = Transform3D(-0.293373, 0.00201408, -0.0122354, -0.00762365, 0.199213, 0.215586, 0.00977973, 0.215712, -0.198983, 0, 0.355585, -1.10368)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="gun_pistolet" index="2"]
+transform = Transform3D(1, -1.30385e-08, 0, 7.07805e-08, 1.00001, -2.98023e-08, 6.51926e-08, -5.66244e-06, 1, 0.0141625, 1.73808, 3.1301)
+visible = false
+amount = 13
+lifetime = 0.03
+speed_scale = 18.46
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ejaql")
+draw_pass_1 = SubResource("BoxMesh_rvfft")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="gun_pistolet" index="3"]
+transform = Transform3D(1, -1.30385e-08, 0, 7.07805e-08, 1.00001, -2.98023e-08, 6.51926e-08, -5.66244e-06, 1, 0.0141625, 1.73808, 3.1301)
+visible = false
+material_override = SubResource("StandardMaterial3D_hed0f")
+amount = 5
+lifetime = 0.03
+speed_scale = 18.46
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_ejaql")
+draw_pass_1 = SubResource("BoxMesh_rvfft")

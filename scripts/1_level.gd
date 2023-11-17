@@ -11,15 +11,15 @@ var load_zombie2 = preload("res://mobs/red_zombie.tscn")
 var load_zombie_green2 = preload ("res://mobs/green_zombie.tscn")
 func _on_timer_timeout():
 	#____________________________________________________________________________________________________________________________
-	var _loca = [$player/Node3D, $player/Node3D2, $player/Node3D7, $player/Node3D8, $player/Node3D9, $player/Node3D10, $player/Node3D3, $player/Node3D4, $player/Node3D5, $player/Node3D6, $player/Node3D11, $player/Node3D12, $player/Node3D13, $player/Node3D14, $player/Node3D15, $player/Node3D16, $player/Node3D17, $player/Node3D18, $player/Node3D21, $player/Node3D22, $player/Node3D19, $player/Node3D20, $player/Node3D23, $player/Node3D24, $player/Node3D25, $player/Node3D26, $player/Node3D27, $player/Node3D28, $player/Node3D29, $player/Node3D30, $player/Node3D31, $player/Node3D32, $player/Node3D33, $player/Node3D34, $player/Node3D35, $player/Node3D36, $player/Node3D37, $player/Node3D38, $player/Node3D39, $player/Node3D40]
+	var _loca = [$player/Node3D, $player/Node3D2, $player/Node3D7, $player/Node3D8, $player/Node3D9, $player/Node3D10, $player/Node3D3, $player/Node3D4, $player/Node3D5, $player/Node3D6, $player/Node3D11, $player/Node3D12, $player/Node3D13, $player/Node3D14, $player/Node3D15, $player/Node3D16, $player/Node3D17, $player/Node3D18, $player/Node3D21, $player/Node3D22, $player/Node3D19, $player/Node3D20, $player/Node3D23, $player/Node3D24, $player/Node3D25, $player/Node3D26, $player/Node3D27, $player/Node3D28, $player/Node3D29, $player/Node3D30, $player/Node3D31, $player/Node3D32, $player/Node3D33, $player/Node3D41, $player/Node3D42, $player/Node3D43, $player/Node3D44, $player/Node3D45, $player/Node3D46, $player/Node3D34, $player/Node3D35, $player/Node3D36, $player/Node3D37, $player/Node3D38, $player/Node3D39, $player/Node3D40]
 	#____________________________________________________________________________________________________________________________________
 	#ГЕНЕРАТОР РАНДОМНЫХ ЧИСЕЛ
-	var random_index = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
-	var random_index2 = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
-	var random_index3 = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
-	var random_index4 = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
-	var random_index5 = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
-	var random_index6 = randi_range(0, 40) % _loca.size() # Генерация случайного индекса
+	var random_index = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
+	var random_index2 = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
+	var random_index3 = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
+	var random_index4 = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
+	var random_index5 = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
+	var random_index6 = randi_range(0, 46) % _loca.size() # Генерация случайного индекса
 	#ПОЛУЧЕНИЕ СЛУЧАЙНЫХ НОД ИХ СПИКА
 	var random_node = _loca[random_index] # Получение случайной ноды из списка
 	var random_node2 = _loca[random_index2] # Получение случайной ноды из списка
@@ -103,6 +103,31 @@ func _on_timer_3_timeout():
 				zabor5.global_position = random_zabor_coord5.global_position
 				add_child(zabor6)
 				zabor6.global_position = random_zabor_coord6.global_position
+#AIRDROOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOP
+var box_load = preload("res://3_models_tscn/box_with_weapon.tscn")
+var airplane_load = preload("res://tscenes/airplane_with_box.tscn")
+
+
+
+func _on_timer_4_timeout():
+	spawn_airplane()
+
+func spawn_airplane():
+	spawn_box()
+	var _airplane = airplane_load.instantiate()
+	add_child(_airplane)
+	_airplane.global_position = $player/airplane_node.global_position
+	
+func spawn_box():
+	var box = box_load.instantiate()
+	await get_tree().create_timer(1, false).timeout
+	add_child(box)
+	box.global_position = $player/box_node.global_position
+	box.reparent($".")
+	
+
+
+
 
 var loadairplane = preload("res://airplane.tscn")
 
@@ -112,6 +137,7 @@ func _on_area_3d_body_entered(_body):
 		G.canscene = true
 		add_child(airplane)
 		airplane.global_position = $player/air_plane_node.global_position
+		
 
 
 func _on_area_3d_2_body_entered(_body):
@@ -121,3 +147,6 @@ func _on_area_3d_2_body_entered(_body):
 
 func _on_timer_2_timeout():
 	$player/AudioStreamPlayer3D2.play()
+
+
+

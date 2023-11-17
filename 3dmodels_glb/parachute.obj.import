@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bp88trde7ysac"
+path="res://.godot/imported/parachute.obj-13932460f2d04dc815ed2a8ee959453a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/parachute.obj-13932460f2d04dc815ed2a8ee959453a.mesh"]
+
+source_file="res://3dmodels_glb/parachute.obj"
+dest_files=["res://.godot/imported/parachute.obj-13932460f2d04dc815ed2a8ee959453a.mesh", "res://.godot/imported/parachute.obj-13932460f2d04dc815ed2a8ee959453a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,6 +1,6 @@
 extends CharacterBody3D
-var speed = 32
-var ac = 20
+var speed = 36
+var ac = 10
 var grav = -35
 var max_grav = -40
 var jump = 8
@@ -10,13 +10,16 @@ var vel = Vector3()
 var del
 var target_rotation = Vector3(0, 0, 0)
 var rotation_speed = 15
-const SPEED = 5.0
+const SPEED = 50.0
 const JUMP_VELOCITY = 4.5
 var camera_shake = true
 var zabor = false
+var shooting = false
+var pricel = false
 func _ready():
 	_on_timer_timeout()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$right_arm2.hide()
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _process(delta):
@@ -34,6 +37,27 @@ func _process(delta):
 	if G.zabor_died == true:
 		if zabor == false:
 			zabor_anim()
+	if G.gun_a_hand == true and G.DIED == false:
+		if not $Camera3D/RayCast3D.get_collider():
+			pricel = false
+		if $Camera3D/RayCast3D.get_collider():
+			pricel = true
+		$right_arm.hide()
+		$right_arm2.show()
+		if pricel == false:
+			$TextureRect2.hide()
+			$TextureRect.show()
+		if pricel == true:
+			$TextureRect.hide()
+			$TextureRect2.show()
+			$TextureRect2/AnimationPlayer.play("pricel")
+	if G.gun_a_hand == false:
+		$right_arm2.hide()
+		$right_arm.show()
+	if G.DIED:
+		G.gun_a_hand = false
+		
+	
 		
 
 func _physics_process(delta):
@@ -69,7 +93,14 @@ func control_move_and_grav():
 		vel.y += grav * del
 		if vel.y < max_grav:
 			vel.y = max_grav
+		if Input.is_action_just_pressed("shoot"):
+			if G.gun_a_hand == true:
+				if shooting == false:
+					$right_arm2/AnimationPlayer.play("shoot_animation")
+					shoot()
 	if G.DIED == true:
+		$TextureRect.hide()
+		$TextureRect2.hide()
 		$".".hide()
 		dir.y = 0
 		
@@ -88,3 +119,14 @@ func _on_timer_timeout():
 		
 func zabor_anim():
 	zabor = true
+	
+func shoot():
+	shooting = true
+	$BOOOM.play()
+	if $Camera3D/RayCast3D.get_collider():
+		var zombie = $Camera3D/RayCast3D.get_collider()
+		if zombie.is_in_group("red_zombie") or zombie.is_in_group("green_zombie"):
+			zombie.hit()
+	await get_tree().create_timer(0.2, false).timeout
+	shooting = false
+		

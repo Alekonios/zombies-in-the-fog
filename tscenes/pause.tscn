@@ -110,7 +110,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_5nci6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_g03s0")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_n0hhl")
 theme_override_styles/focus = SubResource("StyleBoxTexture_04qfa")
-text = "quit maim menu"
+text = "quit main menu"
 flat = true
 icon_alignment = 1
 

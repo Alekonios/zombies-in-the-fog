@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dlxpkf08838i4"]
+[gd_scene load_steps=22 format=3 uid="uid://dlxpkf08838i4"]
 
 [ext_resource type="Script" path="res://scripts/red_zombie.gd" id="1_q7mwe"]
 [ext_resource type="AudioStream" uid="uid://d3re2pa4i7ak4" path="res://music and sounds/zomba2.mp3" id="2_f5o4i"]
@@ -224,6 +224,166 @@ tracks/13/path = NodePath("Armature/Skeleton3D:Bone.012")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, -2.20504e-09, 6.95707e-09, -0.0108676, 0.999941)
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("GPUParticles3D:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath(".:collision_layer")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath(".:collision_mask")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_vl6a7"]
+resource_name = "died_anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.008")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.674989, -0.197868, 0.23076, 0.672301, 0.3, 1, 0.27648, 0.555188, 0.151422, 0.769673)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.006")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.667883, 0.0299566, 0.161793, 0.72585, 0.3, 1, -0.0524176, 0.117129, 0.196436, 0.972083)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -0.143025, -0.0148474, -0.148959, 0.978333, 0.1, 1, -0.314263, -0.0341088, -0.143017, 0.937881, 0.7, 1, -0.0231506, -0.00138592, -0.150337, 0.988363, 0.8, 1, 0.0126892, 0.00263534, -0.150322, 0.988552, 0.9, 1, -0.164598, -0.0172719, -0.148474, 0.974969)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:collision_layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:collision_mask")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_17fmm"]
+resource_name = "hit_anim"
+length = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.0952005, -0.00265971, 0.0112138, 0.995391, 0.2, 1, -0.0529623, -0.262924, 0.0749899, 0.960439, 0.4, 1, 0.0952005, -0.00265971, 0.0112138, 0.995391)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.003")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.143025, -0.0148474, -0.148959, 0.978333, 0.2, 1, 0.0271506, 0.215401, -0.130068, 0.967444, 0.4, 1, -0.143025, -0.0148474, -0.148959, 0.978333)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.006")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.667883, 0.0299566, 0.161793, 0.72585, 0.2, 1, 0.500539, 0.0801884, 0.151746, 0.84853, 0.4, 1, 0.667883, 0.0299566, 0.161793, 0.72585)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Bone.007")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, -2.30855e-08, -2.22356e-08, -0.0754428, 0.99715, 0.2, 1, -0.646026, 0.111658, -0.0920897, 0.749468, 0.4, 1, -2.30855e-08, -2.22356e-08, -0.0754428, 0.99715)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Bone.021")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.502754, -0.0710854, 0.0061826, 0.86148, 0.1, 1, 0.7356, -0.0600592, -0.0573868, 0.672303, 0.4, 1, 0.502754, -0.0710854, 0.0061826, 0.86148)
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("GPUParticles3D:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_kbilc"]
 resource_name = "kill_animation"
@@ -409,6 +569,8 @@ tracks/10/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_28tbl"]
 _data = {
 "RESET": SubResource("Animation_3r6lr"),
+"died_anim": SubResource("Animation_vl6a7"),
+"hit_anim": SubResource("Animation_17fmm"),
 "kill_animation": SubResource("Animation_kbilc"),
 "walk": SubResource("Animation_5hera")
 }
@@ -421,6 +583,27 @@ size = Vector3(64.6094, 1, 87.8404)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i64wn"]
 size = Vector3(2.15581, 3.58154, 0.711479)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a3mla"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(-1, -1, 2)
+initial_velocity_max = 1.0
+linear_accel_max = 1.0
+angle_max = 2.0
+scale_min = 0.1
+scale_max = 0.3
+anim_speed_min = 5.48
+anim_speed_max = 16.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lrcv"]
+albedo_color = Color(0.47451, 0.870588, 0.270588, 1)
+rim_enabled = true
+rim = 0.62
+rim_tint = 0.71
+
+[sub_resource type="BoxMesh" id="BoxMesh_d2he7"]
+material = SubResource("StandardMaterial3D_4lrcv")
 
 [node name="red_zombie" type="CharacterBody3D" groups=["red_zombie"]]
 script = ExtResource("1_q7mwe")
@@ -447,7 +630,7 @@ bones/2/name = "Bone.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(0.999746, -0.0225286, -7.68549e-08, 0.0225286, 0.999746, -3.77625e-09, 7.69205e-08, 2.04386e-09, 1, 3.23759e-10, 0.437777, 9.87856e-09)
 bones/2/enabled = true
-bones/2/position = Vector3(1.31703e-09, 0.437777, 1.56947e-08)
+bones/2/position = Vector3(3.30358e-09, 0.437777, 1.56947e-08)
 bones/2/rotation = Quaternion(0.0952005, -0.00265971, 0.0112138, 0.995391)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "Bone.003"
@@ -455,7 +638,7 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.999499, 0.0316377, -3.05615e-07, -0.0316377, 0.999499, 1.48433e-08, 3.05931e-07, -5.16688e-09, 1, -5.23239e-09, 0.372345, -4.48611e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(-5.23239e-09, 0.372345, -4.48611e-09)
-bones/3/rotation = Quaternion(-0.0902509, -0.00891888, -0.149838, 0.984543)
+bones/3/rotation = Quaternion(-0.143025, -0.0148474, -0.148959, 0.978333)
 bones/3/scale = Vector3(1, 1, 0.999998)
 bones/4/name = "Bone.020"
 bones/4/parent = 3
@@ -468,9 +651,9 @@ bones/5/name = "Bone.021"
 bones/5/parent = 3
 bones/5/rest = Transform3D(0.990926, -0.0743421, -0.111974, -0.0648478, 0.465279, -0.882785, 0.117727, 0.882037, 0.456236, -1.63311e-09, 0.269659, 1.7154e-08)
 bones/5/enabled = true
-bones/5/position = Vector3(8.63344e-08, 0.269659, 6.84779e-08)
+bones/5/position = Vector3(1.27295e-07, 0.269659, 6.59569e-08)
 bones/5/rotation = Quaternion(0.641263, -0.031564, -0.0285045, 0.766141)
-bones/5/scale = Vector3(1, 1, 1)
+bones/5/scale = Vector3(1, 1, 0.999999)
 bones/6/name = "Bone.022"
 bones/6/parent = 5
 bones/6/rest = Transform3D(0.990774, 0.0523658, -0.125, -0.0911104, 0.940171, -0.328295, 0.10033, 0.336655, 0.936268, -1.39698e-09, 0.188529, -2.51923e-07)
@@ -489,16 +672,16 @@ bones/8/name = "Bone.007"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.988617, 0.150456, -4.08612e-08, -0.150456, 0.988617, 4.93944e-08, 4.78277e-08, -4.26843e-08, 1, 5.77467e-08, 0.593792, 1.15642e-08)
 bones/8/enabled = true
-bones/8/position = Vector3(-6.01392e-08, 0.593792, 2.6852e-08)
+bones/8/position = Vector3(-1.8065e-07, 0.593792, 4.596e-08)
 bones/8/rotation = Quaternion(-2.30855e-08, -2.22356e-08, -0.0754428, 0.99715)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "Bone.008"
 bones/9/parent = 8
 bones/9/rest = Transform3D(0.997337, -0.0729234, 4.60858e-08, 0.0729234, 0.997337, -2.06349e-08, -4.44583e-08, 2.39406e-08, 1, 2.09288e-07, 0.138802, -3.1983e-09)
 bones/9/enabled = true
-bones/9/position = Vector3(-2.66415e-08, 0.138802, 2.2917e-08)
+bones/9/position = Vector3(1.50698e-07, 0.138802, -3.14906e-07)
 bones/9/rotation = Quaternion(0.674989, -0.197868, 0.23076, 0.672301)
-bones/9/scale = Vector3(1, 0.999999, 1)
+bones/9/scale = Vector3(1, 0.999996, 1)
 bones/10/name = "Bone.010"
 bones/10/parent = 9
 bones/10/rest = Transform3D(0.999792, 0.0204039, 1.60419e-08, -0.0204039, 0.999792, 5.44742e-09, -1.59275e-08, -5.7736e-09, 1, -3.20349e-07, 0.357543, -2.37431e-08)
@@ -524,9 +707,9 @@ bones/13/name = "Bone.006"
 bones/13/parent = 12
 bones/13/rest = Transform3D(0.995984, -0.0895266, -1.25138e-07, 0.0895266, 0.995984, -1.87878e-08, 1.26318e-07, 7.50912e-09, 1, 1.77221e-07, 0.651897, -3.79846e-09)
 bones/13/enabled = true
-bones/13/position = Vector3(1.77221e-07, 0.651897, -3.79846e-09)
+bones/13/position = Vector3(-8.43417e-07, 0.651897, -3.27932e-07)
 bones/13/rotation = Quaternion(0.667883, 0.0299566, 0.161793, 0.72585)
-bones/13/scale = Vector3(1, 1, 0.999999)
+bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Bone.009"
 bones/14/parent = 13
 bones/14/rest = Transform3D(1, -7.45058e-09, 7.10543e-15, 7.45058e-09, 1, -5.62502e-16, -7.10543e-15, 5.62502e-16, 1, -2.02474e-08, 0.145905, 3.68873e-09)
@@ -668,6 +851,18 @@ stream = ExtResource("5_yyjlm")
 volume_db = -4.572
 unit_size = 5.24
 pitch_scale = 0.7
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35656, 1.9908, 0.00163746)
+visible = false
+amount = 10
+lifetime = 0.77
+speed_scale = 1.77
+explosiveness = 0.28
+randomness = 0.64
+fixed_fps = 35
+process_material = SubResource("ParticleProcessMaterial_a3mla")
+draw_pass_1 = SubResource("BoxMesh_d2he7")
 
 [connection signal="body_entered" from="sound" to="." method="_on_sound_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -3,6 +3,7 @@ extends Node3D
 
 func _on_area_3d_body_entered(_body):
 	if _body.is_in_group("player"):
+		_body.hide()
 		$Camera3D2/left_arm.show()
 		$Camera3D2/right_arm.show()
 		$Camera3D2.global_position = _body.global_position

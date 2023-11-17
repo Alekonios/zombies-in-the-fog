@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d13m7cviljth"]
+[gd_scene load_steps=22 format=3 uid="uid://d13m7cviljth"]
 
 [ext_resource type="Script" path="res://scripts/1_level.gd" id="1_ty726"]
 [ext_resource type="PackedScene" uid="uid://xi45rp0tdxit" path="res://player/player.tscn" id="2_ly0os"]
@@ -22,6 +22,9 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2wuj"]
 size = Vector3(8192, 11.2936, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vedk"]
+size = Vector3(319.507, 130.693, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mcap4"]
 size = Vector3(266.017, 2.88998, 1)
@@ -65,15 +68,31 @@ _data = {
 "whiting": SubResource("Animation_8pi3m")
 }
 
-[sub_resource type="Environment" id="Environment_78db8"]
+[sub_resource type="Environment" id="Environment_cp5bm"]
+ssr_fade_in = 0.0416088
+ssr_fade_out = 0.965935
+ssr_depth_tolerance = 42.61
+ssao_radius = 1.67
+ssao_intensity = 16.0
+ssao_power = 0.53033
+ssao_detail = 5.0
+ssao_horizon = 0.08
+ssao_sharpness = 0.64
+ssao_ao_channel_affect = 1.0
+sdfgi_bounce_feedback = 0.31
+glow_enabled = true
+fog_light_energy = 0.0
+fog_sun_scatter = 1.0
+fog_height = 1024.0
 volumetric_fog_enabled = true
-volumetric_fog_emission = Color(0.219608, 0.219608, 0.219608, 1)
+adjustment_enabled = true
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ty726")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1215.45, 0, 0, 0, 1, 0, 0, 0, 11716.8, 0, 0, -5720.94)
+layers = 7
 mesh = SubResource("BoxMesh_vgd7x")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -82,14 +101,14 @@ mesh = SubResource("BoxMesh_vgd7x")
 shape = SubResource("ConcavePolygonShape3D_e0rtr")
 
 [node name="Area3D" type="Area3D" parent="MeshInstance3D"]
-transform = Transform3D(0.000822741, 0, 0, 0, 1, 0, 0, 0, 8.53475e-05, 0, 0, -0.30211)
+transform = Transform3D(0.000822741, 0, 0, 0, 1, 0, 0, 0, 8.53475e-05, 1.61947e-05, 0, -0.389103)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.65485, 0)
 shape = SubResource("BoxShape3D_c2wuj")
 
 [node name="Area3D2" type="Area3D" parent="MeshInstance3D"]
-transform = Transform3D(0.00082274, 0, 0, 0, 1, 0, 0, 0, 8.53475e-05, 0, 0, -0.283756)
+transform = Transform3D(0.00082274, 0, 0, 0, 1, 0, 0, 0, 8.53475e-05, 1.61947e-05, 0, -0.370749)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.65485, 0)
@@ -205,6 +224,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.3134, 0.0286086, -71.1915
 [node name="Node3D33" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0149, 0.0286086, -63.3824)
 
+[node name="Node3D41" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.2334, 0.0286086, -87.3539)
+
+[node name="Node3D42" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.7559, 0.0286086, -88.1599)
+
+[node name="Node3D43" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.1963, 0.0286086, -80.0289)
+
+[node name="Node3D44" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.9259, 0.0286086, -80.0289)
+
+[node name="Node3D45" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.6274, 0.0286086, -72.2198)
+
+[node name="Node3D46" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.5556, 0.0286086, -93.8616)
+
 [node name="Node3D34" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.569, 0.0286086, -64.9113)
 
@@ -227,15 +264,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7655, 0.0286086, -58.926)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.2429, 0.0286086, -59.732)
 
 [node name="Area3D" type="Area3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972445, 11.273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972445, 6.4394)
 script = ExtResource("3_ls6xq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player/Area3D"]
-transform = Transform3D(4.55402, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_mcap4")
+shape = SubResource("BoxShape3D_2vedk")
 
 [node name="graas" type="Area3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.28953, 8.92724)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.28953, 6.03389)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("4_1r3kv")
@@ -252,7 +288,7 @@ script = ExtResource("3_ls6xq")
 shape = SubResource("BoxShape3D_mcap4")
 
 [node name="grass_node" type="Node3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.519536, 0.0319616, -55.3649)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.519536, 0.0319616, -58.4559)
 
 [node name="zabor-node8" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2133, 0, -101.87)
@@ -301,6 +337,12 @@ stream = ExtResource("5_31r68")
 process_callback = 0
 wait_time = 25.0
 autostart = true
+
+[node name="airplane_node" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.2518, -116.291)
+
+[node name="box_node" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6574, -103.38)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -1533,143 +1575,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.815, 0, 0)
 
 [node name="grass_node" type="Node3D" parent="grass_all/grass9/grass_body"]
 
-[node name="grass10" type="Node3D" parent="grass_all" groups=["grass_group"]]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.86591, 0.487556, -45.3779)
-
-[node name="grass_body" type="StaticBody3D" parent="grass_all/grass10" groups=["grass_body"]]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="grass_all/grass10/grass_body"]
-shape = SubResource("BoxShape3D_ui8b0")
-
-[node name="Node3D" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-
-[node name="Node3D2" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54479, 0, 0)
-
-[node name="Node3D3" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5066, 0, 0)
-
-[node name="Node3D4" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.173, 0, 0)
-
-[node name="Node3D5" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6971, 0, 0)
-
-[node name="Node3D6" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.519, 0, 0)
-
-[node name="Node3D7" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.3419, 0, 0)
-
-[node name="Node3D8" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.0847, 0, 0)
-
-[node name="Node3D9" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.54, 0, 0)
-
-[node name="Node3D10" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.5782, 0, 0)
-
-[node name="Node3D11" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9117, 0, 0)
-
-[node name="Node3D12" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3876, 0, 0)
-
-[node name="Node3D13" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5657, 0, 0)
-
-[node name="Node3D14" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.74287, 0, 0)
-
-[node name="Node3D15" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.757, 0, 0)
-
-[node name="Node3D16" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.302, 0, 0)
-
-[node name="Node3D17" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.264, 0, 0)
-
-[node name="Node3D18" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.93, 0, 0)
-
-[node name="Node3D19" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.454, 0, 0)
-
-[node name="Node3D20" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.276, 0, 0)
-
-[node name="Node3D21" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.099, 0, 0)
-
-[node name="Node3D22" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6725, 0, 0)
-
-[node name="Node3D23" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2173, 0, 0)
-
-[node name="Node3D24" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.1791, 0, 0)
-
-[node name="Node3D25" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.8456, 0, 0)
-
-[node name="Node3D26" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.3697, 0, 0)
-
-[node name="Node3D27" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.1916, 0, 0)
-
-[node name="Node3D28" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.014, 0, 0)
-
-[node name="Node3D29" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.072, 0, 0)
-
-[node name="Node3D30" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.527, 0, 0)
-
-[node name="Node3D31" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.5656, 0, 0)
-
-[node name="Node3D32" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.8991, 0, 0)
-
-[node name="Node3D33" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.375, 0, 0)
-
-[node name="Node3D34" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.5531, 0, 0)
-
-[node name="Node3D35" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.7302, 0, 0)
-
-[node name="Node3D36" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -162.157, 0, 0)
-
-[node name="Node3D37" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.612, 0, 0)
-
-[node name="Node3D38" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.65, 0, 0)
-
-[node name="Node3D39" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.984, 0, 0)
-
-[node name="Node3D40" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.46, 0, 0)
-
-[node name="Node3D41" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -123.638, 0, 0)
-
-[node name="Node3D42" parent="grass_all/grass10/grass_body" instance=ExtResource("5_gs6q8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.815, 0, 0)
-
-[node name="grass_node" type="Node3D" parent="grass_all/grass10/grass_body"]
-
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
 anchor_left = -0.228
@@ -1709,7 +1614,12 @@ wait_time = 10.0
 autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_78db8")
+environment = SubResource("Environment_cp5bm")
+
+[node name="Timer4" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
 
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]
@@ -1720,3 +1630,4 @@ environment = SubResource("Environment_78db8")
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Label2" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]

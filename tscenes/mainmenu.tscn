@@ -928,15 +928,6 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_mq23n")
 theme_override_styles/focus = SubResource("StyleBoxTexture_vsk51")
 text = "QUIT GaME"
 
-[node name="Label2" type="Label" parent="Node2D"]
-offset_left = 72.6117
-offset_top = 1242.39
-offset_right = 521.612
-offset_bottom = 1307.39
-theme_override_fonts/font = ExtResource("6_rew7o")
-theme_override_font_sizes/font_size = 25
-text = "Sequential Studio"
-
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -1068,6 +1059,19 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_8ysl6")
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0
 autostart = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -67.0
+offset_right = 358.0
+offset_bottom = -19.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_rew7o")
+theme_override_font_sizes/font_size = 26
+text = "sequetntial studio"
 
 [connection signal="mouse_entered" from="Node2D/Label/play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Node2D/Label/play" to="." method="_on_play_pressed"]
