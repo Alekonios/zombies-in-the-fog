@@ -1,0 +1,196 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckvwvs8ht8p4j"]
+
+[ext_resource type="PackedScene" uid="uid://d0hmyqwvumce8" path="res://3dmodels_glb/left_arm.glb" id="1_tuohn"]
+[ext_resource type="Texture2D" uid="uid://tfaqjlhxsxlr" path="res://3dmodels_glb/lighting.png" id="2_hnuo3"]
+[ext_resource type="ArrayMesh" uid="uid://d1mlumbbx3715" path="res://3dmodels_glb/lighting.obj" id="3_m4q8q"]
+
+[sub_resource type="Animation" id="Animation_nyru3"]
+resource_name = "hand_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0115541, 0, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.24345e-14, 0, 0, 1, 0.3, 1, 0.443298, 0, 0, 0.896374)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1.77636e-15, 0, 0, 1, 0.3, 1, 0.278052, 0, 0, 0.960566)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(0.0160919, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lighting:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0642809, -0.862062, -0.983306), Vector3(0.0642809, -0.209163, -0.975762), Vector3(0.0642809, 0.395259, -0.601616), Vector3(0.0642809, 0.497197, -0.0810512)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lighting:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.11426, 0, 0), Vector3(-1.01925, 0, 0), Vector3(0.0133349, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t1fou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0115541, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_egjph"]
+resource_name = "hand_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0115541, 0, 0), Vector3(-2.05724, 0, 0)]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Bone.001")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.443298, 0, 0, 0.896374)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Bone.002")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0.278052, 0, 0, 0.960566)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0160919, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lighting:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0642809, 0.497197, -0.0810512)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Lighting:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0133349, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pmrdb"]
+_data = {
+"RESET": SubResource("Animation_t1fou"),
+"hand_down": SubResource("Animation_egjph"),
+"hand_up": SubResource("Animation_nyru3")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4in4b"]
+albedo_texture = ExtResource("2_hnuo3")
+
+[node name="left_arm" instance=ExtResource("1_tuohn")]
+transform = Transform3D(1, 0, 0, 0, 0.999933, 0.0115538, 0, -0.0115538, 0.999933, 0, 0, 0)
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.022478, 0.999747, 0, -0.999747, 0.022478, 0, 0, 0)
+bones/1/position = Vector3(0, 0.425898, 6.79986e-10)
+bones/2/position = Vector3(0, 0.246057, 2.91998e-11)
+bones/2/scale = Vector3(1, 1, 1)
+
+[node name="model" parent="Armature/Skeleton3D" index="0"]
+lod_bias = 128.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_pmrdb")
+}
+
+[node name="Lighting" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(0.584136, 0, 0, 0, -0.301491, 0.581068, 0, -0.499039, -0.351048, 0.0642809, -0.862062, -0.983306)
+material_override = SubResource("StandardMaterial3D_4in4b")
+mesh = ExtResource("3_m4q8q")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" index="0"]
+transform = Transform3D(1.71193, 0, 0, 0, 1.71515, -5.96046e-08, 0, 0, 1.47302, 0, 0.288109, -1.13497)
+light_color = Color(1, 1, 0.8, 1)
+light_energy = 16.0
+light_indirect_energy = 0.5
+light_volumetric_fog_energy = 0.5
+light_specular = 7.758
+shadow_enabled = true
+spot_range = 50.0029
+spot_angle = 27.4304

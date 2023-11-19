@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccl5ferldcvys"
+path="res://.godot/imported/11986c2f439eb45.mp3-9def7450cb1ca6ac27afb4b163cd2b78.mp3str"
+
+[deps]
+
+source_file="res://music and sounds/11986c2f439eb45.mp3"
+dest_files=["res://.godot/imported/11986c2f439eb45.mp3-9def7450cb1ca6ac27afb4b163cd2b78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

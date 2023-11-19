@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlxpkf08838i4"]
+[gd_scene load_steps=23 format=3 uid="uid://dlxpkf08838i4"]
 
 [ext_resource type="Script" path="res://scripts/red_zombie.gd" id="1_q7mwe"]
 [ext_resource type="AudioStream" uid="uid://d3re2pa4i7ak4" path="res://music and sounds/zomba2.mp3" id="2_f5o4i"]
 [ext_resource type="AudioStream" uid="uid://cv3cd2o28uj3u" path="res://music and sounds/kus.mp3" id="4_74i1g"]
 [ext_resource type="Script" path="res://scripts/red_kill.gd" id="4_g4uey"]
 [ext_resource type="AudioStream" uid="uid://bp3irj23ndjji" path="res://music and sounds/rev.mp3" id="5_yyjlm"]
+[ext_resource type="AudioStream" uid="uid://00wtct1o5sxw" path="res://music and sounds/Record (online-voice-recorder.com) (8).mp3" id="6_rduax"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f4pwl"]
 resource_name = "red_zombie_last_v.vox Material"
@@ -863,6 +864,13 @@ randomness = 0.64
 fixed_fps = 35
 process_material = SubResource("ParticleProcessMaterial_a3mla")
 draw_pass_1 = SubResource("BoxMesh_d2he7")
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_rduax")
+volume_db = -28.951
+unit_size = 8.09
+pitch_scale = 0.54
+bus = &"SOUND_EFFECTS"
 
 [connection signal="body_entered" from="sound" to="." method="_on_sound_body_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

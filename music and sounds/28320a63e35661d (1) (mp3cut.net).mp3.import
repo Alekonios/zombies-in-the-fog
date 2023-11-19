@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pr17v4ow0k22"
+path="res://.godot/imported/28320a63e35661d (1) (mp3cut.net).mp3-0b3528c2badfcc436de6139d1e97abf4.mp3str"
+
+[deps]
+
+source_file="res://music and sounds/28320a63e35661d (1) (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/28320a63e35661d (1) (mp3cut.net).mp3-0b3528c2badfcc436de6139d1e97abf4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

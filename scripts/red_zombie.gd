@@ -34,6 +34,7 @@ func hit():
 		if hp < 100:
 			hp -= 50
 			$AnimationPlayer.play("hit_anim")
+			$AudioStreamPlayer3D4.play()
 
 func died():
 	hitting = true

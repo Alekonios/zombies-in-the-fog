@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0hwx071rvetr"]
+[gd_scene load_steps=12 format=3 uid="uid://c0hwx071rvetr"]
 
 [ext_resource type="PackedScene" uid="uid://c2r8cq4pqshjm" path="res://3dmodels_glb/right_arm.glb" id="1_w4ox6"]
 [ext_resource type="PackedScene" uid="uid://dyljmxop86e16" path="res://tscenes/gun_pistolet.tscn" id="2_lobi0"]
@@ -158,11 +158,16 @@ tracks/4/keys = {
 "values": [Vector3(0, 0.355585, -1.10368), Vector3(0, 0.37777, -1.04729), Vector3(0, 0.355585, -1.10368)]
 }
 
+[sub_resource type="Animation" id="Animation_co3pm"]
+resource_name = "start"
+length = 0.3
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5scai"]
 _data = {
 "RESET": SubResource("Animation_mn7e5"),
 "pistol": SubResource("Animation_677fd"),
-"shoot_animation": SubResource("Animation_3w7p5")
+"shoot_animation": SubResource("Animation_3w7p5"),
+"start": SubResource("Animation_co3pm")
 }
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ejaql"]
@@ -180,7 +185,12 @@ anim_speed_max = 3.07
 anim_offset_max = 0.6027
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2d4i"]
+blend_mode = 1
 albedo_color = Color(0.992157, 0, 0, 1)
+metallic = 0.84
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.113725, 0.113725, 0.113725, 1)
 rim_enabled = true
 rim = 0.69
 rim_tint = 0.42
@@ -189,10 +199,12 @@ rim_tint = 0.42
 material = SubResource("StandardMaterial3D_o2d4i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hed0f"]
+blend_mode = 1
 albedo_color = Color(1, 1, 0, 1)
 rim_enabled = true
 
 [node name="right_arm" instance=ExtResource("1_w4ox6")]
+transform = Transform3D(1, 0, 0, 0, 0.179764, 0.98371, 0, -0.98371, 0.179764, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/scale = Vector3(1, 1, 1)
@@ -212,7 +224,7 @@ libraries = {
 transform = Transform3D(-0.293373, 0.00201408, -0.0122354, -0.00762365, 0.199213, 0.215586, 0.00977973, 0.215712, -0.198983, 0, 0.355585, -1.10368)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="gun_pistolet" index="2"]
-transform = Transform3D(1, -1.30385e-08, 0, 7.07805e-08, 1.00001, -2.98023e-08, 6.51926e-08, -5.66244e-06, 1, 0.0141625, 1.73808, 3.1301)
+transform = Transform3D(1, -1.49012e-08, -9.31323e-09, 6.51926e-08, 1.00001, 0, 5.21541e-08, -5.60284e-06, 1, -0.0241934, 1.41887, 3.99723)
 visible = false
 amount = 13
 lifetime = 0.03
@@ -222,7 +234,7 @@ process_material = SubResource("ParticleProcessMaterial_ejaql")
 draw_pass_1 = SubResource("BoxMesh_rvfft")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="gun_pistolet" index="3"]
-transform = Transform3D(1, -1.30385e-08, 0, 7.07805e-08, 1.00001, -2.98023e-08, 6.51926e-08, -5.66244e-06, 1, 0.0141625, 1.73808, 3.1301)
+transform = Transform3D(1, -1.49012e-08, -9.31323e-09, 6.51926e-08, 1.00001, 0, 5.21541e-08, -5.60284e-06, 1, -0.0241934, 1.41887, 3.99723)
 visible = false
 material_override = SubResource("StandardMaterial3D_hed0f")
 amount = 5

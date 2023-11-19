@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://xi45rp0tdxit"]
+[gd_scene load_steps=21 format=3 uid="uid://xi45rp0tdxit"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_746bd"]
 [ext_resource type="PackedScene" uid="uid://bj2setqts7fgn" path="res://player/left_arm.tscn" id="2_cfycu"]
@@ -6,7 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://fayvgjteeu3s" path="res://music and sounds/3dbf5d21b2d06c0 (mp3cut.net).mp3" id="4_lmtui"]
 [ext_resource type="PackedScene" uid="uid://c0hwx071rvetr" path="res://player/arm_for_pistol.tscn" id="6_qhi54"]
 [ext_resource type="AudioStream" uid="uid://cp8eghwrb3cwm" path="res://music and sounds/shoot.mp3" id="6_spc17"]
+[ext_resource type="AudioStream" uid="uid://pr17v4ow0k22" path="res://music and sounds/28320a63e35661d (1) (mp3cut.net).mp3" id="6_vkb0w"]
 [ext_resource type="Texture2D" uid="uid://c1lclcso7tj1t" path="res://textures/pricel-transformed.png" id="7_be7bp"]
+[ext_resource type="FontFile" uid="uid://v7wbamqcqhhp" path="res://minecraft-ten-font-cyrillic.ttf" id="8_01m0y"]
+[ext_resource type="AudioStream" uid="uid://xaa08eawljwy" path="res://music and sounds/gundryfiresnglvar5 (mp3cut.net).mp3" id="9_i0pgv"]
+[ext_resource type="PackedScene" uid="uid://ckvwvs8ht8p4j" path="res://player/left_arm_with_lighting.tscn" id="11_vm3jy"]
+[ext_resource type="AudioStream" uid="uid://ccl5ferldcvys" path="res://music and sounds/11986c2f439eb45.mp3" id="12_e1pjo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vybos"]
 height = 2.54656
@@ -14,24 +19,42 @@ height = 2.54656
 [sub_resource type="Animation" id="Animation_xqa6g"]
 resource_name = "run_with_gun"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_osjse"]
-_data = {
-"run_with_gun": SubResource("Animation_xqa6g")
-}
-
-[sub_resource type="Animation" id="Animation_jjyma"]
-resource_name = "pricel"
+[sub_resource type="Animation" id="Animation_gjfcy"]
+resource_name = "dostal"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("right_arm2:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.94902, 0, 0, 1)]
+"values": [Vector3(-1.3322, 0.626878, -0.509634), Vector3(-0.725124, 0.186319, -0.0207232)]
+}
+
+[sub_resource type="Animation" id="Animation_mdkhj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("right_arm2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.3322, 0.626878, -0.509634)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osjse"]
+_data = {
+"RESET": SubResource("Animation_mdkhj"),
+"dostal": SubResource("Animation_gjfcy"),
+"run_with_gun": SubResource("Animation_xqa6g")
 }
 
 [sub_resource type="Animation" id="Animation_5viiw"]
@@ -47,6 +70,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jjyma"]
+resource_name = "pricel"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.94902, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l060x"]
@@ -95,10 +133,17 @@ libraries = {
 }
 
 [node name="right_arm2" parent="." instance=ExtResource("6_qhi54")]
-transform = Transform3D(0.985027, -0.102469, 0.138639, -0.0155085, 0.748257, 0.663228, -0.171698, -0.655448, 0.735464, 0.98033, 1.75915, 0.111335)
+transform = Transform3D(0.985027, -0.102469, 0.138639, -0.115298, 0.206303, 0.971671, -0.128168, -0.973108, 0.1914, 0.98033, 1.75915, 0.111335)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="right_arm2"]
+transform = Transform3D(1, -4.47035e-08, -1.88127e-07, 3.72529e-08, 1, 0, 2.03028e-07, -1.49012e-08, 1, -0.0169529, 0.892972, -0.95504)
+stream = ExtResource("6_vkb0w")
+volume_db = -15.239
+pitch_scale = 0.92
+bus = &"SOUND_EFFECTS"
 
 [node name="BOOOM" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59707, 2.15732, -1.75228)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59707, 1.86888, -1.81693)
 stream = ExtResource("6_spc17")
 volume_db = -16.0
 pitch_scale = 0.85
@@ -106,15 +151,17 @@ bus = &"SOUND_EFFECTS"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -454.0
-offset_top = -334.5
-offset_right = 454.0
-offset_bottom = 334.5
+modulate = Color(0, 0.466667, 0, 1)
+self_modulate = Color(1, 0.505882, 0.584314, 1)
+anchors_preset = -1
+anchor_left = 0.493
+anchor_top = 0.488
+anchor_right = 0.512
+anchor_bottom = 0.512
+offset_left = -440.56
+offset_top = -321.54
+offset_right = 430.96
+offset_bottom = 321.54
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.04, -0.0400098)
@@ -148,5 +195,33 @@ metadata/_edit_use_anchors_ = true
 libraries = {
 "": SubResource("AnimationLibrary_l060x")
 }
+
+[node name="amount" type="Label" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -13.0
+offset_bottom = 27.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_01m0y")
+theme_override_font_sizes/font_size = 23
+
+[node name="nohaveamount" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.588126, 1.86698, -1.8192)
+stream = ExtResource("9_i0pgv")
+volume_db = -18.095
+pitch_scale = 0.88
+
+[node name="left_arm2" parent="." instance=ExtResource("11_vm3jy")]
+transform = Transform3D(1, 0, 0, 0, 0.999933, 0.0115538, 0, -0.0115538, 0.999933, -0.97232, 1.46728, -0.468901)
+visible = false
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.685488, 1.26003, -0.151426)
+stream = ExtResource("12_e1pjo")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

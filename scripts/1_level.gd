@@ -1,7 +1,10 @@
 extends Node3D
 func _ready():
+	G.night = false
+	G.gun_a_hand = false
 	G.P_SCORE = 0
 	$ColorRect/AnimationPlayer.play("whiting")
+	$moon/AnimationPlayer.play("RESET")
 #ZOMBIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 var load_zombie = preload("res://mobs/red_zombie.tscn")
 var load_zombie_green = preload ("res://mobs/green_zombie.tscn")
@@ -148,5 +151,20 @@ func _on_area_3d_2_body_entered(_body):
 func _on_timer_2_timeout():
 	$player/AudioStreamPlayer3D2.play()
 
+func _process(_delta):
+	if G.fps == true:
+		$Label3.show()
+		$Label3.text = str(Engine.get_frames_per_second())
 
 
+
+func _on_moon_timeout():
+	$moon/AnimationPlayer.play("nighing")
+	G.night = true
+	await get_tree().create_timer(20, false).timeout
+	_on_sun_timeout()
+
+
+func _on_sun_timeout():
+	G.night = false
+	$sun/AnimationPlayer.play("suning")

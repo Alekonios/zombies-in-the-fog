@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgn8q1atqjsql"]
+[gd_scene load_steps=17 format=3 uid="uid://cgn8q1atqjsql"]
 
 [ext_resource type="Script" path="res://scripts/sound_settings.gd" id="1_mankw"]
 [ext_resource type="Texture2D" uid="uid://doasc0pvsuery" path="res://textures/pixil-frame-0 (15).png" id="1_xbxp0"]
@@ -33,6 +33,19 @@ thickness = 5
 color = Color(0.462745, 0, 0, 1)
 thickness = 5
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gc5f0"]
+modulate_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p7jp8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_15450"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cls0n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4xt6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pee74"]
+
 [node name="options" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -64,6 +77,16 @@ offset_bottom = 192.0
 theme_override_fonts/font = ExtResource("2_yk2e6")
 theme_override_font_sizes/font_size = 37
 text = "SOUNDS"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 126.0
+offset_right = 632.0
+offset_bottom = 193.0
+theme_override_fonts/font = ExtResource("2_yk2e6")
+theme_override_font_sizes/font_size = 37
+text = "show fps"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -118,5 +141,29 @@ step = 0.001
 script = ExtResource("5_njmtp")
 bas_name = "MUSIC"
 
+[node name="CheckButton" type="CheckButton" parent="."]
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -525.0
+offset_top = -333.0
+offset_right = -481.0
+offset_bottom = -309.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yk2e6")
+theme_override_font_sizes/font_size = 3
+theme_override_styles/normal = SubResource("StyleBoxTexture_gc5f0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p7jp8")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_15450")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cls0n")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_j4xt6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pee74")
+
 [connection signal="value_changed" from="music" to="music" method="_on_value_changed"]
 [connection signal="value_changed" from="music2" to="music2" method="_on_value_changed"]
+[connection signal="button_up" from="CheckButton" to="." method="_on_check_button_button_up"]

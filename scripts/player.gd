@@ -16,10 +16,18 @@ var camera_shake = true
 var zabor = false
 var shooting = false
 var pricel = false
+var amount = 0
+var set_start_amount = false
+var dostal = false
+var light_dostal = false
+var ubral_dostal = false
+
+
 func _ready():
 	_on_timer_timeout()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	$right_arm2.hide()
+	$left_arm2/AnimationPlayer.play("hand_up")
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _process(delta):
@@ -38,6 +46,10 @@ func _process(delta):
 		if zabor == false:
 			zabor_anim()
 	if G.gun_a_hand == true and G.DIED == false:
+		if dostal == false:
+			start_pistol()
+		if set_start_amount == false:
+			set_amount_func()
 		if not $Camera3D/RayCast3D.get_collider():
 			pricel = false
 		if $Camera3D/RayCast3D.get_collider():
@@ -55,11 +67,25 @@ func _process(delta):
 		$right_arm2.hide()
 		$right_arm.show()
 	if G.DIED:
+		$TextureRect.hide() 
+		$TextureRect2.hide()
 		G.gun_a_hand = false
-		
-	
-		
-
+	if G.gun_a_hand == true:
+		if amount < 0:
+			amount = 0
+	if G.night == true:
+		if light_dostal == false:
+			$left_arm2.hide()
+			$left_arm.hide()
+			start_lighting()
+	if G.night == false:
+		$left_arm2.hide()
+		$left_arm.show()
+		light_dostal = false
+		if light_dostal == false:
+			if ubral_dostal == false:
+				off_lighting()
+				
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -96,7 +122,8 @@ func control_move_and_grav():
 		if Input.is_action_just_pressed("shoot"):
 			if G.gun_a_hand == true:
 				if shooting == false:
-					$right_arm2/AnimationPlayer.play("shoot_animation")
+					if amount > 0:
+						$right_arm2/AnimationPlayer.play("shoot_animation")
 					shoot()
 	if G.DIED == true:
 		$TextureRect.hide()
@@ -122,11 +149,36 @@ func zabor_anim():
 	
 func shoot():
 	shooting = true
-	$BOOOM.play()
-	if $Camera3D/RayCast3D.get_collider():
-		var zombie = $Camera3D/RayCast3D.get_collider()
-		if zombie.is_in_group("red_zombie") or zombie.is_in_group("green_zombie"):
-			zombie.hit()
-	await get_tree().create_timer(0.2, false).timeout
+	if amount > 0:
+		$BOOOM.play()
+		if $Camera3D/RayCast3D.get_collider():
+			var zombie = $Camera3D/RayCast3D.get_collider()
+			if zombie.is_in_group("red_zombie") or zombie.is_in_group("green_zombie"):
+				zombie.hit()
+		amount -= 1
+	if amount == 0:
+		$nohaveamount.play()
+	await get_tree().create_timer(3, false).timeout
 	shooting = false
+
+func set_amount_func():
+	amount = 8
+	set_start_amount = true
 		
+func start_pistol():
+	$AnimationPlayer.play("dostal")
+	$right_arm2/AudioStreamPlayer3D.play()
+	dostal = true
+
+func start_lighting():
+	$left_arm2/AnimationPlayer.play("hand_up")
+	await get_tree().create_timer(0.15, false).timeout
+	$left_arm2.show()
+	$AudioStreamPlayer3D2.play()
+	light_dostal = true
+
+func off_lighting():
+	$left_arm2/AnimationPlayer.play("hand_down")
+	await get_tree().create_timer(0.15, false).timeout
+	$left_arm2.hide()
+	ubral_dostal = true
