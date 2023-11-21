@@ -9,6 +9,7 @@ var parachute = true
 
 func _on_area_3d_body_entered(_body):
 	if _body.is_in_group("player"):
+		_body.set_amount_func()
 		G.gun_a_hand = true
 		
 func _physics_process(delta):

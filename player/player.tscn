@@ -16,8 +16,20 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vybos"]
 height = 2.54656
 
-[sub_resource type="Animation" id="Animation_xqa6g"]
-resource_name = "run_with_gun"
+[sub_resource type="Animation" id="Animation_mdkhj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("right_arm2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.3322, 0.626878, -0.509634)]
+}
 
 [sub_resource type="Animation" id="Animation_gjfcy"]
 resource_name = "dostal"
@@ -35,20 +47,8 @@ tracks/0/keys = {
 "values": [Vector3(-1.3322, 0.626878, -0.509634), Vector3(-0.725124, 0.186319, -0.0207232)]
 }
 
-[sub_resource type="Animation" id="Animation_mdkhj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("right_arm2:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.3322, 0.626878, -0.509634)]
-}
+[sub_resource type="Animation" id="Animation_xqa6g"]
+resource_name = "run_with_gun"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osjse"]
 _data = {
@@ -133,7 +133,7 @@ libraries = {
 }
 
 [node name="right_arm2" parent="." instance=ExtResource("6_qhi54")]
-transform = Transform3D(0.985027, -0.102469, 0.138639, -0.115298, 0.206303, 0.971671, -0.128168, -0.973108, 0.1914, 0.98033, 1.75915, 0.111335)
+transform = Transform3D(0.985027, -0.102469, 0.138641, -0.1153, 0.206306, 0.97167, -0.128168, -0.973107, 0.191402, 0.98033, 1.75915, 0.111335)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="right_arm2"]
 transform = Transform3D(1, -4.47035e-08, -1.88127e-07, 3.72529e-08, 1, 0, 2.03028e-07, -1.49012e-08, 1, -0.0169529, 0.892972, -0.95504)
@@ -220,8 +220,9 @@ pitch_scale = 0.88
 transform = Transform3D(1, 0, 0, 0, 0.999933, 0.0115538, 0, -0.0115538, 0.999933, -0.97232, 1.46728, -0.468901)
 visible = false
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+[node name="TAKELIGHT" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.685488, 1.26003, -0.151426)
 stream = ExtResource("12_e1pjo")
+bus = &"SOUND_EFFECTS"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

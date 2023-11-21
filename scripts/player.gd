@@ -158,23 +158,23 @@ func shoot():
 		amount -= 1
 	if amount == 0:
 		$nohaveamount.play()
-	await get_tree().create_timer(3, false).timeout
+	await get_tree().create_timer(0.3, false).timeout
 	shooting = false
 
 func set_amount_func():
 	amount = 8
+	$right_arm2/AudioStreamPlayer3D.play()
 	set_start_amount = true
 		
 func start_pistol():
 	$AnimationPlayer.play("dostal")
-	$right_arm2/AudioStreamPlayer3D.play()
 	dostal = true
 
 func start_lighting():
 	$left_arm2/AnimationPlayer.play("hand_up")
 	await get_tree().create_timer(0.15, false).timeout
 	$left_arm2.show()
-	$AudioStreamPlayer3D2.play()
+	$TAKELIGHT.play()
 	light_dostal = true
 
 func off_lighting():
