@@ -85,6 +85,9 @@ func _process(delta):
 		if light_dostal == false:
 			if ubral_dostal == false:
 				off_lighting()
+	if amount == 0:
+		$TextureRect.hide()
+		$TextureRect2.hide()
 				
 func _physics_process(delta):
 	# Add the gravity.
@@ -119,7 +122,7 @@ func control_move_and_grav():
 		vel.y += grav * del
 		if vel.y < max_grav:
 			vel.y = max_grav
-		if Input.is_action_just_pressed("shoot"):
+		if Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("shoot_space"):
 			if G.gun_a_hand == true:
 				if shooting == false:
 					if amount > 0:

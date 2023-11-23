@@ -11,12 +11,16 @@ config_version=5
 [application]
 
 config/name="zombies in the fog"
+config/description="its sad=("
 run/main_scene="res://tscenes/mainmenu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
-boot_splash/show_image=false
+boot_splash/image="res://textures/0354349076aec198.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://zomba2.png"
-config/windows_native_icon="res://zomba2 (1).ico"
+config/windows_native_icon="res://zomba2-_1_.ico"
+boot_splash/minimum_display_time=1000
 
 [autoload]
 

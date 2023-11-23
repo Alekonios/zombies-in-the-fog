@@ -1743,7 +1743,7 @@ environment = SubResource("Environment_cp5bm")
 
 [node name="Timer4" type="Timer" parent="."]
 process_callback = 0
-wait_time = 15.0
+wait_time = 60.0
 autostart = true
 
 [node name="Label3" type="Label" parent="."]
