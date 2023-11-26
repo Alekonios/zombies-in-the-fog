@@ -18,8 +18,9 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://textures/0354349076aec198.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-config/icon="res://zomba2.png"
-config/windows_native_icon="res://zomba2-_1_.ico"
+config/icon="res://icon.ico"
+config/macos_native_icon="res://icon.ico"
+config/windows_native_icon="res://icon.ico"
 boot_splash/minimum_display_time=1000
 
 [autoload]
@@ -36,7 +37,6 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 window/size/initial_position_type=0
-window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/per_pixel_transparency/allowed=true
@@ -48,10 +48,10 @@ mouse_cursor/energy_saving/keep_screen_on.editor=false
 mouse_cursor/per_pixel_transparency/allowed=true
 mouse_cursor/vsync/vsync_mode=1
 mouse_cursor/size/resizable=false
-mouse_cursor/icon="res://zomba2.png"
 mouse_cursor/name="zombies in the fog"
 mouse_cursor/size/viewport_height=1080
 mouse_cursor/size/viewport_width=1920
+mouse_cursor/icon="res://zomba2.png"
 
 [editor]
 

@@ -145,9 +145,12 @@ bus = &"SOUND_EFFECTS"
 [node name="BOOOM" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59707, 1.86888, -1.81693)
 stream = ExtResource("6_spc17")
+attenuation_model = 1
 volume_db = -16.0
 pitch_scale = 0.85
+max_polyphony = 3
 bus = &"SOUND_EFFECTS"
+doppler_tracking = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

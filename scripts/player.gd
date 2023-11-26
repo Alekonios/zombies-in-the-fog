@@ -1,5 +1,5 @@
 extends CharacterBody3D
-var speed = 36
+var speed = 30
 var ac = 10
 var grav = -35
 var max_grav = -40
@@ -161,7 +161,7 @@ func shoot():
 		amount -= 1
 	if amount == 0:
 		$nohaveamount.play()
-	await get_tree().create_timer(0.3, false).timeout
+	await get_tree().create_timer(0.15, false).timeout
 	shooting = false
 
 func set_amount_func():
@@ -182,6 +182,6 @@ func start_lighting():
 
 func off_lighting():
 	$left_arm2/AnimationPlayer.play("hand_down")
-	await get_tree().create_timer(0.15, false).timeout
+	await get_tree().create_timer(0.2, false).timeout
 	$left_arm2.hide()
 	ubral_dostal = true
