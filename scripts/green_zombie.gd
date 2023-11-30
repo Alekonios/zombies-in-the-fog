@@ -19,7 +19,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if G.DIED == false:
-		velocity.z += 0.08
+		velocity.z += 0.05
 	else:
 		velocity.z = 0
 		
@@ -28,12 +28,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-
-func _process(_delta):
-	if hp <= 0:
-		if died_zom == false:
-			
-			died()
 		
 
 func hit():
@@ -65,3 +59,9 @@ func _on_died_body_entered(_body):
 			$AnimationPlayer.stop()
 			$AnimationPlayer.play("kill_animation")
 
+
+
+func _on_hp_timer_timeout():
+	if hp <= 0:
+		if died_zom == false:
+			died()

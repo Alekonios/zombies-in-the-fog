@@ -828,9 +828,7 @@ transform = Transform3D(0.878809, 0, 0.477174, 0, 1, 0, -0.477174, 0, 0.878809, 
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.852648, 0.0961841, 0.513556, 0.162376, 0.983019, 0.0854807, -0.496614, 0.156274, -0.853788, 55.4605, 17.4327, -18.1958)
-light_energy = 0.192
-light_indirect_energy = 16.0
-light_volumetric_fog_energy = 2.747
+light_color = Color(0.603922, 0.603922, 0.603922, 1)
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_normal_bias = 5.03
@@ -1072,6 +1070,11 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("6_rew7o")
 theme_override_font_sizes/font_size = 26
 text = "sequetntial studio"
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.0188, -0.35492, 0)
+size = Vector3(97.666, 2, 59.7023)
+shape = 0
 
 [connection signal="mouse_entered" from="Node2D/Label/play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="Node2D/Label/play" to="." method="_on_play_pressed"]

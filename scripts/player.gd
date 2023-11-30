@@ -42,6 +42,14 @@ func _process(delta):
 			$Camera3D.position.y -= 0.01
 			await get_tree().create_timer(0.2, false).timeout
 			camera_shake = true
+	
+				
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+		
+func _on_optim_timer_timeout():
 	if G.zabor_died == true:
 		if zabor == false:
 			zabor_anim()
@@ -88,11 +96,6 @@ func _process(delta):
 	if amount == 0:
 		$TextureRect.hide()
 		$TextureRect2.hide()
-				
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
 		
 func control_move_and_grav():
 	dir = Vector2(0,0)
@@ -185,3 +188,6 @@ func off_lighting():
 	await get_tree().create_timer(0.2, false).timeout
 	$left_arm2.hide()
 	ubral_dostal = true
+
+
+

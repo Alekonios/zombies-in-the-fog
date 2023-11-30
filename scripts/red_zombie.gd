@@ -16,17 +16,11 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	if G.DIED == false:
 		if died_zom == false:
-			velocity.z += 0.08
+			velocity.z += 0.05
 	else:
 		velocity.z = 0
 
 	move_and_slide()
-
-func _process(_delta):
-	if hp <= 0:
-		if died_zom == false:
-			
-			died()
 		
 
 func hit():
@@ -59,3 +53,9 @@ func _on_area_3d_body_entered(_body):
 			$AudioStreamPlayer3D2.play()
 			await get_tree().create_timer(2, false).timeout
 			$AudioStreamPlayer3D3.play()
+
+
+func _on_hp_timer_timeout():
+	if hp <= 0:
+		if died_zom == false:
+			died()

@@ -2152,6 +2152,16 @@ libraries = {
 "": SubResource("AnimationLibrary_os3d0")
 }
 
+[node name="Timer5" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.2
+autostart = true
+
+[node name="fpstimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D/Area3D3" to="MeshInstance3D/Area3D3" method="_on_body_entered"]
@@ -2166,5 +2176,7 @@ libraries = {
 [connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="moon" to="." method="_on_moon_timeout"]
 [connection signal="timeout" from="sun" to="." method="_on_sun_timeout"]
+[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
+[connection signal="timeout" from="fpstimer" to="." method="_on_fpstimer_timeout"]
 
 [editable path="pause"]
