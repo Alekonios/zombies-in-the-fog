@@ -1,8 +1,4 @@
 extends Node3D
-var sscore500 = false
-var sscore1000 = false
-var sscore1500 = false
-var sscore2000 = false
 func _ready():
 	G.night = false
 	G.gun_a_hand = false
@@ -145,8 +141,6 @@ func _on_area_3d_body_entered(_body):
 		add_child(airplane)
 		airplane.global_position = $player/air_plane_node.global_position
 		
-
-
 func _on_area_3d_2_body_entered(_body):
 	if _body.is_in_group("player"):
 		G.spawn_zombie = true
@@ -154,6 +148,11 @@ func _on_area_3d_2_body_entered(_body):
 
 func _on_timer_2_timeout():
 	$player/AudioStreamPlayer3D2.play()
+
+func _process(_delta):
+	if G.fps == true:
+		$Label3.show()
+		$Label3.text = str(Engine.get_frames_per_second())
 
 
 
@@ -167,38 +166,3 @@ func _on_moon_timeout():
 func _on_sun_timeout():
 	G.night = false
 	$sun/AnimationPlayer.play("suning")
-	
-func score500():
-	$AnimationPlayer.play("NICE", false)
-	sscore500 = true
-func score1000():
-	$AnimationPlayer.play("wow", false)
-	sscore1000 = true
-func score1500():
-	$AnimationPlayer.play("good_job", false)
-	sscore1500 = true
-func score2000():
-	$AnimationPlayer.play("you're cool", false)
-	sscore2000 = true
-
-
-
-func _on_timer_5_timeout():
-	if G.P_SCORE >= 500:
-		if sscore500 == false:
-			score500()
-	if G.P_SCORE >= 1000:
-		if sscore1000 == false:
-			score1000()
-	if G.P_SCORE >= 1500:
-		if sscore1500 == false:
-			score1500()
-	if G.P_SCORE >= 2000:
-		if sscore2000 == false:
-			score2000()
-
-
-func _on_fpstimer_timeout():
-	if G.fps == true:
-		$Label3.show()
-		$Label3.text = str(Engine.get_frames_per_second())

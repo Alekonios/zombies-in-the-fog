@@ -1,5 +1,5 @@
 extends CharacterBody3D
-var speed = 30
+var speed = 36
 var ac = 10
 var grav = -35
 var max_grav = -40
@@ -42,14 +42,6 @@ func _process(delta):
 			$Camera3D.position.y -= 0.01
 			await get_tree().create_timer(0.2, false).timeout
 			camera_shake = true
-	
-				
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-		
-func _on_optim_timer_timeout():
 	if G.zabor_died == true:
 		if zabor == false:
 			zabor_anim()
@@ -93,9 +85,11 @@ func _on_optim_timer_timeout():
 		if light_dostal == false:
 			if ubral_dostal == false:
 				off_lighting()
-	if amount == 0:
-		$TextureRect.hide()
-		$TextureRect2.hide()
+				
+func _physics_process(delta):
+	# Add the gravity.
+	if not is_on_floor():
+		velocity.y -= gravity * delta
 		
 func control_move_and_grav():
 	dir = Vector2(0,0)
@@ -125,7 +119,7 @@ func control_move_and_grav():
 		vel.y += grav * del
 		if vel.y < max_grav:
 			vel.y = max_grav
-		if Input.is_action_just_pressed("shoot") or Input.is_action_just_pressed("shoot_space"):
+		if Input.is_action_just_pressed("shoot"):
 			if G.gun_a_hand == true:
 				if shooting == false:
 					if amount > 0:
@@ -164,30 +158,27 @@ func shoot():
 		amount -= 1
 	if amount == 0:
 		$nohaveamount.play()
-	await get_tree().create_timer(0.15, false).timeout
+	await get_tree().create_timer(0,3, false).timeout
 	shooting = false
 
 func set_amount_func():
 	amount = 8
-	$right_arm2/AudioStreamPlayer3D.play()
 	set_start_amount = true
 		
 func start_pistol():
 	$AnimationPlayer.play("dostal")
+	$right_arm2/AudioStreamPlayer3D.play()
 	dostal = true
 
 func start_lighting():
 	$left_arm2/AnimationPlayer.play("hand_up")
 	await get_tree().create_timer(0.15, false).timeout
 	$left_arm2.show()
-	$TAKELIGHT.play()
+	$AudioStreamPlayer3D2.play()
 	light_dostal = true
 
 func off_lighting():
 	$left_arm2/AnimationPlayer.play("hand_down")
-	await get_tree().create_timer(0.2, false).timeout
+	await get_tree().create_timer(0.15, false).timeout
 	$left_arm2.hide()
 	ubral_dostal = true
-
-
-

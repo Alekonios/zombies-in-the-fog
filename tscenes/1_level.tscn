@@ -1,9 +1,7 @@
-[gd_scene load_steps=37 format=3 uid="uid://d13m7cviljth"]
+[gd_scene load_steps=28 format=3 uid="uid://d13m7cviljth"]
 
 [ext_resource type="Script" path="res://scripts/1_level.gd" id="1_ty726"]
-[ext_resource type="Script" path="res://scripts/map_and_left.gd" id="2_fy57c"]
 [ext_resource type="PackedScene" uid="uid://xi45rp0tdxit" path="res://player/player.tscn" id="2_ly0os"]
-[ext_resource type="Script" path="res://scripts/right_end.gd" id="3_321s1"]
 [ext_resource type="Script" path="res://scripts/Area3D.gd" id="3_ls6xq"]
 [ext_resource type="Script" path="res://scripts/graas.gd" id="4_1r3kv"]
 [ext_resource type="AudioStream" uid="uid://bg2pybvhvplpt" path="res://music and sounds/vorona-karkaet (mp3cut.net).mp3" id="5_31r68"]
@@ -24,8 +22,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c2wuj"]
 size = Vector3(8192, 11.2936, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3a31c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vedk"]
 size = Vector3(319.507, 130.693, 1)
@@ -191,318 +187,6 @@ _data = {
 "suning": SubResource("Animation_cnqbw")
 }
 
-[sub_resource type="Animation" id="Animation_i344h"]
-resource_name = "NICE"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label4:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.968627, 0.968627, 0.968627, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label4:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(820, 498), Vector2(820, -250)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label4:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_wbj4i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label4:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label4:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(819.5, 316)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label4:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Label5:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Label5:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(811, 498)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Label5:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Label6:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Label6:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(683, 483)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Label6:rotation")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Label7:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Label7:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(620.5, 478)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Label7:rotation")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_stmb2"]
-resource_name = "good_job"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label6:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0), Color(0.968627, 0.968627, 0.968627, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label6:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(683, 483), Vector2(683, -244)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label6:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ex5fw"]
-resource_name = "wow"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label5:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0), Color(0.968627, 0.968627, 0.968627, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label5:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(811, 498), Vector2(811, -278)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label5:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_wxccu"]
-resource_name = "you're cool"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label7:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.968627, 0.968627, 0.968627, 0), Color(0.968627, 0.968627, 0.968627, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Label7:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(620.5, 478), Vector2(620.5, -247)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label7:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_os3d0"]
-_data = {
-"NICE": SubResource("Animation_i344h"),
-"RESET": SubResource("Animation_wbj4i"),
-"good_job": SubResource("Animation_stmb2"),
-"wow": SubResource("Animation_ex5fw"),
-"you're cool": SubResource("Animation_wxccu")
-}
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ty726")
 
@@ -529,27 +213,6 @@ transform = Transform3D(0.00082274, 0, 0, 0, 1, 0, 0, 0, 8.53475e-05, 1.61947e-0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.65485, 0)
 shape = SubResource("BoxShape3D_c2wuj")
-
-[node name="Area3D3" type="Area3D" parent="MeshInstance3D"]
-script = ExtResource("2_fy57c")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D3"]
-transform = Transform3D(0.00198416, 0, 0, 0, 126.968, 0, 0, 0, 1, -0.437308, 43.175, 0)
-shape = SubResource("BoxShape3D_3a31c")
-
-[node name="left_node" type="Node3D" parent="MeshInstance3D/Area3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487078, 0, 0)
-
-[node name="Area3D4" type="Area3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.895273, 0, 0)
-script = ExtResource("3_321s1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/Area3D4"]
-transform = Transform3D(0.00198416, 0, 0, 0, 126.968, 0, 0, 0, 1, -0.437308, 43.175, 0)
-shape = SubResource("BoxShape3D_3a31c")
-
-[node name="right_node" type="Node3D" parent="MeshInstance3D/Area3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.407484, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.884765, -0.363204, 0.292017, -0.223952, 0.880858, 0.417055, -0.408701, 0.303597, -0.860693, 0, 38.6444, 0)
@@ -766,7 +429,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.4581, 0, -101.87)
 [node name="air_plane_node" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -535.515)
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="player"]
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.0213, 42.4484, -63.5635)
 stream = ExtResource("5_31r68")
 
@@ -780,10 +443,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.2518, -116.291)
 
 [node name="box_node" type="Node3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.6574, -103.38)
-
-[node name="FogVolume" type="FogVolume" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.316, -1.26801, -27.904)
-size = Vector3(55.0607, 0.861212, 20.5338)
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -2091,81 +1750,8 @@ libraries = {
 "": SubResource("AnimationLibrary_fy8v8")
 }
 
-[node name="Label4" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 819.5
-offset_top = 316.0
-offset_right = 1100.5
-offset_bottom = 470.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_pk383")
-theme_override_font_sizes/font_size = 88
-text = "NICE!"
-
-[node name="Label5" type="Label" parent="."]
-modulate = Color(0.968627, 0.968627, 0.968627, 0)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 811.0
-offset_top = 498.0
-offset_right = 1110.0
-offset_bottom = 652.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_pk383")
-theme_override_font_sizes/font_size = 88
-text = "WOW!"
-
-[node name="Label6" type="Label" parent="."]
-modulate = Color(0.968627, 0.968627, 0.968627, 0)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 683.0
-offset_top = 483.0
-offset_right = 1239.0
-offset_bottom = 637.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_pk383")
-theme_override_font_sizes/font_size = 88
-text = "good job!"
-
-[node name="Label7" type="Label" parent="."]
-modulate = Color(0.968627, 0.968627, 0.968627, 0)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 620.5
-offset_top = 478.0
-offset_right = 1300.5
-offset_bottom = 632.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("6_pk383")
-theme_override_font_sizes/font_size = 88
-text = "you're cool"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_os3d0")
-}
-
-[node name="Timer5" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.2
-autostart = true
-
-[node name="fpstimer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.1
-autostart = true
-
 [connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="MeshInstance3D/Area3D2" to="." method="_on_area_3d_2_body_entered"]
-[connection signal="body_entered" from="MeshInstance3D/Area3D3" to="MeshInstance3D/Area3D3" method="_on_body_entered"]
-[connection signal="body_entered" from="MeshInstance3D/Area3D4" to="MeshInstance3D/Area3D4" method="_on_body_entered"]
 [connection signal="body_entered" from="player/Area3D" to="player/Area3D" method="_on_body_entered"]
 [connection signal="body_entered" from="player/graas" to="player/graas" method="_on_body_entered"]
 [connection signal="body_entered" from="player/Area3D2" to="player/Area3D2" method="_on_body_entered"]
@@ -2176,7 +1762,5 @@ autostart = true
 [connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="moon" to="." method="_on_moon_timeout"]
 [connection signal="timeout" from="sun" to="." method="_on_sun_timeout"]
-[connection signal="timeout" from="Timer5" to="." method="_on_timer_5_timeout"]
-[connection signal="timeout" from="fpstimer" to="." method="_on_fpstimer_timeout"]
 
 [editable path="pause"]

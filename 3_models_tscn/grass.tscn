@@ -1,24 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c43ts6mjnf6sx"]
+[gd_scene load_steps=5 format=3 uid="uid://c43ts6mjnf6sx"]
 
 [ext_resource type="Texture2D" uid="uid://bljavhckuv6bb" path="res://3_models_tscn/grass4.png" id="1_iyrfa"]
 [ext_resource type="ArrayMesh" uid="uid://mf44fgm8uh8g" path="res://3_models_tscn/grass4.obj" id="2_guc2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcj8r"]
-transparency = 4
-depth_draw_mode = 1
-albedo_color = Color(0, 0.956863, 0.960784, 1)
 albedo_texture = ExtResource("1_iyrfa")
-metallic_specular = 0.27
-metallic_texture_channel = 1
-disable_receive_shadows = true
-point_size = 77.2
-proximity_fade_distance = 4096.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en0em"]
+cull_mode = 1
+albedo_color = Color(0, 0, 0, 1)
+proximity_fade_enabled = true
 
 [node name="Node3D" type="Node3D" groups=["grass"]]
 
 [node name="Grass4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1.73942, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_bcj8r")
-lod_bias = 128.0
-gi_mode = 0
+mesh = ExtResource("2_guc2t")
+
+[node name="Grass5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.993251, 0, 0, 0, 1.72768, 0, 0, 0, 0.993251, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_en0em")
 mesh = ExtResource("2_guc2t")

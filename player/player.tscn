@@ -98,7 +98,6 @@ script = ExtResource("1_746bd")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.07127, 0)
-near = 0.376
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(11.2896, 0, 0, 0, -0.00140236, -10.3811, 0, 1.0044, -0.0144943, 0, 0, -1.03665)
@@ -146,11 +145,9 @@ bus = &"SOUND_EFFECTS"
 [node name="BOOOM" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59707, 1.86888, -1.81693)
 stream = ExtResource("6_spc17")
-volume_db = -19.048
+volume_db = -16.0
 pitch_scale = 0.85
-max_polyphony = 3
 bus = &"SOUND_EFFECTS"
-doppler_tracking = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -223,15 +220,8 @@ pitch_scale = 0.88
 transform = Transform3D(1, 0, 0, 0, 0.999933, 0.0115538, 0, -0.0115538, 0.999933, -0.97232, 1.46728, -0.468901)
 visible = false
 
-[node name="TAKELIGHT" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.685488, 1.26003, -0.151426)
 stream = ExtResource("12_e1pjo")
-bus = &"SOUND_EFFECTS"
-
-[node name="optim_timer" type="Timer" parent="."]
-process_callback = 0
-wait_time = 0.06
-autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="optim_timer" to="." method="_on_optim_timer_timeout"]

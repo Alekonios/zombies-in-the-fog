@@ -86,7 +86,7 @@ offset_right = 632.0
 offset_bottom = 193.0
 theme_override_fonts/font = ExtResource("2_yk2e6")
 theme_override_font_sizes/font_size = 37
-text = "parameters"
+text = "show fps"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -97,26 +97,6 @@ offset_bottom = 294.0
 theme_override_fonts/font = ExtResource("2_yk2e6")
 theme_override_font_sizes/font_size = 27
 text = "SOUND EFFECTS"
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_left = 509.0
-offset_top = 227.0
-offset_right = 781.0
-offset_bottom = 294.0
-theme_override_fonts/font = ExtResource("2_yk2e6")
-theme_override_font_sizes/font_size = 27
-text = "show fps"
-
-[node name="Label6" type="Label" parent="."]
-layout_mode = 0
-offset_left = 509.0
-offset_top = 329.0
-offset_right = 781.0
-offset_bottom = 396.0
-theme_override_fonts/font = ExtResource("2_yk2e6")
-theme_override_font_sizes/font_size = 27
-text = "film mode"
 
 [node name="music" type="HSlider" parent="."]
 layout_mode = 0
@@ -164,11 +144,15 @@ bas_name = "MUSIC"
 [node name="CheckButton" type="CheckButton" parent="."]
 texture_filter = 5
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.258333
-anchor_top = 0.223148
-anchor_right = 0.28125
-anchor_bottom = 0.24537
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -525.0
+offset_top = -333.0
+offset_right = -481.0
+offset_bottom = -309.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_yk2e6")
@@ -179,29 +163,7 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_15450")
 theme_override_styles/hover = SubResource("StyleBoxTexture_cls0n")
 theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_j4xt6")
 theme_override_styles/focus = SubResource("StyleBoxTexture_pee74")
-metadata/_edit_use_anchors_ = true
-
-[node name="CheckButton2" type="CheckButton" parent="."]
-texture_filter = 5
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.258333
-anchor_top = 0.312963
-anchor_right = 0.28125
-anchor_bottom = 0.335185
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_yk2e6")
-theme_override_font_sizes/font_size = 3
-theme_override_styles/normal = SubResource("StyleBoxTexture_gc5f0")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_p7jp8")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_15450")
-theme_override_styles/hover = SubResource("StyleBoxTexture_cls0n")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_j4xt6")
-theme_override_styles/focus = SubResource("StyleBoxTexture_pee74")
-metadata/_edit_use_anchors_ = true
 
 [connection signal="value_changed" from="music" to="music" method="_on_value_changed"]
 [connection signal="value_changed" from="music2" to="music2" method="_on_value_changed"]
 [connection signal="button_up" from="CheckButton" to="." method="_on_check_button_button_up"]
-[connection signal="button_up" from="CheckButton2" to="." method="_on_check_button_2_button_up"]
